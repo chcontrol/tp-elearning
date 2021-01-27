@@ -105,17 +105,18 @@
                 </div> --}}
                 <ul class="navbar-nav main-nav-auth-profile-wrap text-right">
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        วิชาที่เปิดสอน
+                        <a href="{{route('dashboard')}}">วิชาที่เปิดสอน</a>
                     </li>
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        คำถามที่พบบ่อย
+                        <a href="{{route('register')}}">คำถามที่พบบ่อย</a>
                     </li>
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        ติดต่อเรา
+                        <a href="{{route('register')}}">ติดต่อเรา</a>
                     </li>
-                    <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        ลงทะเบียน/ ลืมรหัสผ่าน
-                    </li>
+                    <li class="nav-item dropdown mini-cart-item nav-text-header" >
+                        <a href="{{route('register')}}">ลงทะเบียน</a> /
+                        <a href="{{route('register')}}"> ลืมรหัสผ่าน</a> 
+                     </li>
                 </ul>
 
                 <ul class="navbar-nav main-nav-auth-profile-wrap">

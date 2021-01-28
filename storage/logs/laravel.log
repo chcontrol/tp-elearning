@@ -3020,7 +3020,7 @@
 #49 C:\\xampp\\htdocs\\tp-elearning\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #50 {main}
 "} 
-[2021-01-28 07:05:43] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+[2021-01-28 08:29:45] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `courses` where `status` = 1 order by `created_at` desc limit 12) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `courses` where `status` = 1 order by `created_at` desc limit 12) at C:\\xampp\\htdocs\\tp-elearning\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:670)
 [stacktrace]
@@ -3149,7 +3149,7 @@
 #63 C:\\xampp\\htdocs\\tp-elearning\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #64 {main}
 "} 
-[2021-01-28 07:05:53] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+[2021-01-28 08:29:55] local.ERROR: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `posts` where `slug` = favicon.ico limit 1) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 2002): SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
  (SQL: select * from `posts` where `slug` = favicon.ico limit 1) at C:\\xampp\\htdocs\\tp-elearning\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:670)
 [stacktrace]

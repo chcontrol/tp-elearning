@@ -21,6 +21,36 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## How to install
+
+0. Install 
+xampp
+SourceTree
+Clone project to C:\xampp\htdocs\tp-elearning
+Pull code
+1.config env
+	-APP_URL=http://localhost
+	-DB_HOST=127.0.0.1
+	-DB_DATABASE=jongkang_learn
+	-DB_USERNAME=root
+-DB_PASSWORD=
+
+2.Create database 
+	-Open http://localhost/phpmyadmin/
+	-New Database
+		-Create database Name ‘jongkang_learn’
+		-Select Database Collation to ‘utf8_general_ci’
+
+3. Open cmd of application part folder
+Enter ‘php artisan migrate’ 
+Enter ‘Composer install’
+Enter ‘npm install’
+4. Enter php artisan migrate:refresh --seed (For first time)
+5. Start Laravel development Server 
+Enter ‘php artisan server’
+Open http://127.0.0.1:8000/
+
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.

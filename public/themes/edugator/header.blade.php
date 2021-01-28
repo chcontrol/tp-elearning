@@ -41,8 +41,7 @@
 <body class="{{get_option('enable_rtl')? 'rtl' : ''}}">
 
 <div class="main-navbar-wrap">
-    <div style="background-color: #EB763D;padding:20px">
-    </div>
+    <div style="background-color: #EB763D;padding:20px"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color: white;">
             <a style="padding-left: 160px;" class="navbar-brand site-main-logo" href="{{route('home')}}">

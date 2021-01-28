@@ -90,16 +90,17 @@ a:hover {
 }
 .dashboard-top-navbar-brand{
     width: 250px;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 0.1rem;
     text-align: center;
 }
 a.navbar-brand{
     color: #65676b;
 }
 .dashboard-top-navbar-brand img{
-    height: 25px;
-    max-height: 25px;
+    height: 45px;
+    max-height: 45px;
     width: auto;
+
 }
 .dashboard-top-nav .dropdown-item {
     color: #212529 !important;
@@ -169,7 +170,7 @@ a.navbar-brand{
 }
 .sidebar ul li a.active{
     /*background-color: #0073aa;*/
-    background-color: #888888;
+    background-color: #EB763D;
     color: #ffffff;
 }
 

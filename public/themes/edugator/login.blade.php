@@ -4,6 +4,9 @@
 
             <div class="card">
                 <div class="card-header">{{ __('Login') }} Using your E-Mail and password or using your social account</div>
+                <div > admin@demo.com </div>
+                <div >instructor@demo.com </div>
+                <div >student@demo.com</div>
 
                 <div class="card-body">
 

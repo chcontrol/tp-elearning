@@ -28,6 +28,7 @@ xampp
 SourceTree
 Clone project to C:\xampp\htdocs\tp-elearning
 Pull code
+
 1.config env
 	-APP_URL=http://localhost
 	-DB_HOST=127.0.0.1

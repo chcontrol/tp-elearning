@@ -16,7 +16,8 @@ class AuthController extends Controller
 
     public function login(){
         $title = __t('login');
-        return view_template('login', compact('title'));
+        $nav_home = "Home";
+        return view_template('login', compact('nav_home',));
     }
 
     public function loginPost(Request $request){

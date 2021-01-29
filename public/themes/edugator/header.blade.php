@@ -41,6 +41,7 @@
 <body class="{{get_option('enable_rtl')? 'rtl' : ''}}">
 
 <div class="main-navbar-wrap">
+    
     <div style="background-color: #EB763D;padding:20px"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid" style="background-color: white;">
@@ -62,7 +63,10 @@
             <div class="collapse navbar-collapse" id="mainNavbarContent">
                 <ul class="navbar-nav categories-nav-item-wrapper">
                     <li class="nav-item nav-categories-item">
-                        {{-- <a class="nav-link browse-categories-nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}</a> --}}
+                        @if( empty($nav_home)) 
+                            <a class="nav-link browse-categories-nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}</a>
+                        @endif 
+                        
 
                         <div class="categories-menu">
                             <ul class="categories-ul-first">
@@ -95,13 +99,15 @@
                     </li>
 
                 </ul>
-
-                {{-- <div class="header-search-wrap ml-2">
+                @if(  empty($nav_home) ) 
+                <div class="header-search-wrap ml-2">
                     <form action="{{route('courses')}}" class="form-inline " method="get">
                         <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="Search">
                         <button class="btn my-2 my-sm-0 header-search-btn" type="submit"><i class="la la-search"></i></button>
                     </form>
-                </div> --}}
+                </div>
+                @endif
+                @if( ! empty($nav_home)) 
                 <ul class="navbar-nav main-nav-auth-profile-wrap text-right">
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
                         <a href="{{route('dashboard')}}">วิชาที่เปิดสอน</a>
@@ -117,6 +123,7 @@
                         <a href="{{route('register')}}"> ลืมรหัสผ่าน</a> 
                      </li>
                 </ul>
+                @endif
 
                 <ul class="navbar-nav main-nav-auth-profile-wrap">
 

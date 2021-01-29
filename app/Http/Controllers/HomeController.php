@@ -16,9 +16,9 @@ class HomeController extends Controller
         $featured_courses = Course::publish()->whereIsFeatured(1)->orderBy('featured_at', 'desc')->take(6)->get();
         $popular_courses = Course::publish()->whereIsPopular(1)->orderBy('popular_added_at', 'desc')->take(8)->get();
         $posts = Post::post()->publish()->take(3)->get();
-        $hello = Course::publish()->orderBy('created_at', 'desc')->take(12)->get();
+        $nav_home = "Home";
 
-        return view(theme('index'), compact('title', 'new_courses', 'featured_courses', 'popular_courses', 'posts','hello'));
+        return view(theme('index'), compact('title', 'new_courses', 'featured_courses', 'popular_courses', 'posts','nav_home'));
     }
 
     public function courses(Request $r){

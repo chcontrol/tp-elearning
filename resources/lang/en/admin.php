@@ -159,7 +159,7 @@ return [
     'delete_permanently'            => 'Delete Permanently',
     'image'                         => 'Image',
     'upload'                        => 'Upload',
-    'media_manager'                 => 'Media manager',
+    'media_manager'                 => 'การจัดการมีเดีย',
     'media_uploaded'                => 'Media uploaded successfully',
     'media_deleted'                 => 'Media has been deleted',
     'media_details'                 => 'Media Details',

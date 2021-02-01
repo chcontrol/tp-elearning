@@ -52,6 +52,7 @@ Route::get('courses/{slug}/assignment/{assignment_id}', 'CourseController@assign
 Route::get('courses/{slug}/quiz/{quiz_id}', 'QuizController@quizView')->name('single_quiz');
 
 Route::get('student_lists/{slug?}', 'CourseController@studentsList')->name('students_list');
+Route::get('datatable', 'CourseController@anyData')->name('datatable');
 
 
 

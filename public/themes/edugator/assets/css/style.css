@@ -620,7 +620,8 @@ Home popular courses
     width: 100%; height: 400px;
 }
 .dashboard-wrap{
-    background-color: #f6f7f2;
+    /* background-color: #f6f7f2; */
+    background-color: #FFFFFF;
 }
 .dashboard-menu-col{
     border-right: 1px solid #dedfe0;

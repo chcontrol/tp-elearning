@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
+use Yajra\Datatables\Datatables;
+
+
 class CourseController extends Controller
 {
 
@@ -712,6 +715,11 @@ class CourseController extends Controller
 
         return view(theme('dashboard.students_list'), compact('title', 'getEarnings'));
 
+    }
+
+    public function anyData()
+    {
+        return Datatables::of(User::query())->make(true);
     }
 
 }

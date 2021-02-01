@@ -54,6 +54,7 @@
                             @else
                                 <a href="{{route('course', $course->slug)}}" class="font-weight-bold mr-3" target="_blank"><i class="la la-eye"></i> {{__t('preview')}} </a>
                             @endif
+                            <a href="{{route('students_list', $course->slug)}}" class="font-weight-bold mr-3" target="_blank"><i class="la la-eye"></i> {{__t('students_list')}} </a>
 
                             @php do_action('my_courses_list_actions_after', $course); @endphp
 

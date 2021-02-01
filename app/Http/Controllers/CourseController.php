@@ -702,4 +702,16 @@ class CourseController extends Controller
         return view(theme('dashboard.my_courses_reviews'), compact('title'));
     }
 
+    public function studentsList()
+    {
+        $title = __t('my_courses_reviews');
+
+        $sql = "SELECT * from users
+        WHERE 1=1";
+        $getEarnings = DB::select(DB::raw($sql));
+
+        return view(theme('dashboard.students_list'), compact('title', 'getEarnings'));
+
+    }
+
 }

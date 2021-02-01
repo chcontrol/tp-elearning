@@ -251,6 +251,7 @@ return [
     'content_locked'                => 'Content locked',
     'if_enrolled_login_text'        => 'If you\'re already enrolled, %s you\'ll need to login. %s',
     'preview'                       => 'Preview',
+    'students_list'                 => 'students list',
     'complete'                      => 'Complete',
     'upload_attachments'            => 'Upload Attachments',
     'dl_resource_available'         => 'Downloadable Resource Available',

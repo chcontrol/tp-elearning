@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Booking;
 use Redirect, Response;
+use App\Course;
 
 class DashboardController extends Controller
 {
@@ -65,7 +66,11 @@ class DashboardController extends Controller
             }
         }
 
-        return view(theme('dashboard.dashboard'), compact('title', 'chartData'));
+        $courses = Course::publish()->orderBy('created_at', 'desc')->take(12)->get();
+
+
+
+        return view(theme('dashboard.dashboard'), compact('title', 'chartData', 'courses'));
     }
 
     public function calendar()

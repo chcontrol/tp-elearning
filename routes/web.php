@@ -51,6 +51,9 @@ Route::get('courses/{slug}/lecture/{lecture_id}', 'CourseController@lectureView'
 Route::get('courses/{slug}/assignment/{assignment_id}', 'CourseController@assignmentView')->name('single_assignment');
 Route::get('courses/{slug}/quiz/{quiz_id}', 'QuizController@quizView')->name('single_quiz');
 
+Route::get('student_lists/{slug?}', 'CourseController@studentsList')->name('students_list');
+
+
 
 Route::get('topics', 'CategoriesController@home')->name('categories');
 Route::get('topics/{category_slug}', 'CategoriesController@show')->name('category_view');

@@ -159,7 +159,7 @@ return [
     'delete_permanently'            => 'Delete Permanently',
     'image'                         => 'Image',
     'upload'                        => 'Upload',
-    'media_manager'                 => 'การจัดการมีเดีย',
+    'media_manager'                 => 'การจัดการมีเดีย123',
     'media_uploaded'                => 'Media uploaded successfully',
     'media_deleted'                 => 'Media has been deleted',
     'media_details'                 => 'Media Details',
@@ -183,7 +183,7 @@ return [
     'select_a_state'                => 'Select a State',
     'city_town'                     => 'City / Town',
 
-    'change_password'               => 'Change Password',
+    'change_password'               => 'Change Password1234',
 
     'pay_with_bank_bank_transfer'   => 'Pay With Direct Bank Transfer',
     'bank_swift_code'               => 'Bank Swift Code',

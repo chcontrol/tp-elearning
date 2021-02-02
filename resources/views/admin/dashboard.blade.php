@@ -31,7 +31,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$userCount}}</h4></div>
-                    <div>Users</div>
+                    <div>{{__t('users')}}</div>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$totalInstructors}}</h4></div>
-                    <div>Instructors</div>
+                    <div>{{__t('instructors')}}</div>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$totalStudents}}</h4></div>
-                    <div>Students</div>
+                    <div>{{__t('students')}}</div>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$courseCount}}</h4></div>
-                    <div>Course</div>
+                    <div>{{__t('courses')}}</div>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$lectureCount}}</h4></div>
-                    <div>Lecture</div>
+                    <div>{{__t('lecture')}}</div>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$quizCount}}</h4></div>
-                    <div>Quiz</div>
+                    <div>{{__t('quiz')}}</div>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$assignmentCount}}</h4></div>
-                    <div>Assignments</div>
+                    <div>{{__t('assignments')}}</div>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$questionCount}}</h4></div>
-                    <div>Question Asked</div>
+                    <div>{{__t('ask_question')}}</div>
                 </div>
             </div>
         </div>
@@ -135,7 +135,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$totalEnrol}}</h4></div>
-                    <div>Enrolled</div>
+                    <div>{{__t('enrolled')}}</div>
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$totalReview}}</h4></div>
-                    <div>Reviews</div>
+                    <div>{{__t('reviews')}}</div>
                 </div>
             </div>
         </div>
@@ -161,7 +161,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{!! price_format($totalAmount) !!}</h4></div>
-                    <div>Payment Total</div>
+                    <div>{{__t('payments_total')}}</div>
                 </div>
             </div>
         </div>
@@ -175,7 +175,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{!! price_format($withdrawsTotal) !!}</h4></div>
-                    <div>Withdraws Total</div>
+                    <div>{{__t('withdraws_total')}}</div>
                 </div>
             </div>
         </div>

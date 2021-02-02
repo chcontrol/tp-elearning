@@ -20,7 +20,7 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col">
-                            <img class="img-fluid" src="{{ theme_url('images/home/slider2.png') }}" alt="Image 2" />
+                            <img class="img-fluid" src="{{ theme_url('images/home/slider3.png') }}" alt="Image 2" />
                         </div>
                         <div class="col">
                             <img class="img-fluid" src="{{ theme_url('images/home/slider1.png') }}" alt="Image 2" />

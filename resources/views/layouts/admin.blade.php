@@ -55,7 +55,8 @@
                 @if ($logoUrl)
                     <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" />
                 @else
-                    <img src="{{ asset('assets/images/Logo-Mega.jpg') }}" alt="{{ get_option('site_title') }}" />
+                {{-- <img src="{{ asset('assets/images/Logo-Mega.jpg') }}" alt="{{ get_option('site_title') }}" /> --}}
+                <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" />
                 @endif
             </a>
         </div>

@@ -43,9 +43,16 @@
                                 @if ($course->video_info())
                                     @include(theme('video-player'), ['model' => $course, 'video_caption' => __t('preview')])
                                 @else
-                                    <img src="{{ media_image_uri($course->thumbnail_id)->image_md }}" class="img-fluid" />
+                                    <img id='videoElementID' src="{{ media_image_uri($course->thumbnail_id)->image_md }}" class="img-fluid" />
                                 @endif
 
+
+                                <script>
+                                    $(document).ready(function(){
+                                        alert()
+                                        $('#videoElementID').bind('contextmenu',function() { return false; });
+                                    });
+                                </script>
 
 
                                 @if ($course->description)

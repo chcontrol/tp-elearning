@@ -64,7 +64,7 @@
                 </select>
 
                 <p class="video-file-type-desc">
-                    <small class="text-muted">Select your preferred video type. (.mp4, YouTube, Vimeo etc.) </small>
+                    <small class="text-muted">{{__t('how_upload_video')}} </small>
                 </p>
 
                 <div class="video-source-input-wrap mb-5" style="display: {{$video_source? 'block' : 'none'}};">

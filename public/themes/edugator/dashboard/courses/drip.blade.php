@@ -25,14 +25,14 @@
                                         <label>{{__t('specific_date')}}</label>
                                         <input type="text" class="form-control date_picker" name="section[{{$section->id}}][unlock_date]" value="{{$section->unlock_date}}" >
 
-                                        <p class="text-muted mb-0"><small> When this section should be unlock</small></p>
+                                        <p class="text-muted mb-0"><small> วันที่ปลดล๊อค</small></p>
                                     </div>
 
                                     <div class="form-group col-md-4">
                                         <label>{{__t('days_after_enrollment')}}</label>
 
                                         <input type="number" class="form-control" name="section[{{$section->id}}][unlock_days]" value="{{$section->unlock_days}}">
-                                        <p class="text-muted mb-0"><small>Place number of days</small></p>
+                                        <p class="text-muted mb-0"><small>ป้อนจำนวนวัน</small></p>
                                     </div>
                                 </div>
 
@@ -56,14 +56,14 @@
                                             <label>{{__t('specific_date')}}</label>
                                             <input type="text" class="form-control date_picker" name="section[{{$section->id}}][content][{{$item->id}}][unlock_date]" value="{{$item->unlock_date}}" >
 
-                                            <p class="text-muted mb-0"><small>When this section should be unlock</small></p>
+                                            <p class="text-muted mb-0"><small>วันที่ปลดล๊อค</small></p>
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>{{__t('days_after_enrollment')}}</label>
 
                                             <input type="number" class="form-control" name="section[{{$section->id}}][content][{{$item->id}}][unlock_days]" value="{{$item->unlock_days}}">
-                                            <p class="text-muted mb-0"><small>Place number of days</small></p>
+                                            <p class="text-muted mb-0"><small>ป้อนจำนวนวัน</small></p>
                                         </div>
                                     </div>
                                 </div>

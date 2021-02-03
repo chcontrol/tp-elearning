@@ -18,7 +18,7 @@
 
 <div class="course-edit-header d-flex mb-3">
 
-    <a href="{{route('my_courses')}}"> <i class="la la-angle-left"></i> Back to courses</a> | <strong class="header-course-title ellipsis">{{$course->title}}</strong>
+    <a href="{{route('my_courses')}}"> <i class="la la-angle-left"></i> กลับสู่หน้าหลักสูตร </a> | <strong class="header-course-title ellipsis">{{$course->title}}</strong>
     | {!! $course->status_html(false) !!}
 
     @if($course->status == 1)

@@ -56,7 +56,8 @@ a.nav-btn.disabled:hover{
     background-color: #8954a8;
 }
 .bg-light-sky{
-    background-color: #e7ecff !important;
+    background-color: #EB763D !important;
+    
 }
 .bg-light-success{
     background-color: #eefff6 !important;
@@ -1077,8 +1078,8 @@ END Media Manager
 }
 .page-header-jumborton{
     min-height:220px;
-    background:-webkit-linear-gradient(315deg, #011D4A 0%, #448ECB 100%);
-    background:linear-gradient(135deg, #011D4A 0%, #448ECB 100%);
+    background:-webkit-linear-gradient(315deg, #EB763D 0%, #f0844e 100%);
+    background:linear-gradient(135deg, #EB763D 0%, #f0844e 100%);
 }
 .page-header-jumborton .page-header-left{
     color: #ffffff;
@@ -1519,15 +1520,16 @@ span.quiz-progress-number.active {
 */
 .page-header-wrapper{
     min-height:150px;
-    background: url("../../images/page-header-bg.svg") 50%/cover;
+    /* background: url("../../images/page-header-bg.svg") 50%/cover; */
     position: relative;
+    background: #EB763D;
 }
 .page-header-wrapper::before {
      content: "";
-     background: #e7ecff;
+     background: #EB763D;
      height: 100%;
      left: 0;
-     opacity: 0.8;
+     opacity: 1;
      position: absolute;
      top: 0;
      width: 100%;

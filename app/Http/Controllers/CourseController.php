@@ -38,6 +38,7 @@ class CourseController extends Controller
         $user = Auth::user();
 
         if ( $course->status != 1){
+           
             if ( ! $user || ! $user->isInstructorInCourse($course->id)){
                 abort(404);
             }

@@ -22,12 +22,13 @@
                                     <i class="la la-pencil-square-o"></i>
                                 </p>
                                 <p class="pl-5 pr-5">
-                                    Your course is in a draft state. Students cannot view, purchase or enroll in this course. For students that are already enrolled, this course will not appear on their student Dashboard.
+                                    {{-- Your course is in a draft state. Students cannot view, purchase or enroll in this course. For students that are already enrolled, this course will not appear on their student Dashboard. --}}
+                                    หลักสูตรของคุณอยู่ในสถานะร่าง นักเรียนไม่สามารถดูซื้อหรือลงทะเบียนในหลักสูตรนี้ได้ สำหรับนักเรียนที่ลงทะเบียนแล้วหลักสูตรนี้จะไม่ปรากฏบนแดชบอร์ดของนักเรียน
                                 </p>
                             </div>
                             <div class="card-footer text-center">
                                 @if(get_option("lms_settings.instructor_can_publish_course"))
-                                    <button type="submit" class="btn btn-dark btn-lg" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> Publish Course</button>
+                                    <button type="submit" class="btn btn-dark btn-lg" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> {{__t('publish_course')}} </button>
                                 @else
                                     <button type="submit" class="btn btn-dark btn-lg" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> Submit for review</button>
                                 @endif
@@ -66,7 +67,7 @@
                             </div>
 
                             @if(get_option("lms_settings.instructor_can_publish_course"))
-                                <button type="submit" class="btn btn-success btn-lg mt-4" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> Publish Course</button>
+                                <button type="submit" class="btn btn-success btn-lg mt-4" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> {{__t('publish_course')}}</button>
                             @else
                                 <button type="submit" class="btn btn-dark btn-lg mt-4" name="publish_btn" value="publish"><i class="la la-arrow-circle-up"></i> Submit for review</button>
                             @endif

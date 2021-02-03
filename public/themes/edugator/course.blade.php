@@ -295,7 +295,7 @@
 
 
 
-            {{-- @if ($course->requirements_arr)
+            {{-- @if ($course->requirements_arr || 1==1)
                 <h4 class="mb-4">{{ __t('requirements') }}</h4>
 
                 <div class="course-widget mb-4 p-4">
@@ -380,7 +380,7 @@
                 @endforeach
             </div> --}}
 
-            {{--
+            
             @if ($course->reviews->count())
                 <div id="course-ratings-wrap">
                     <h4 class="mb-4">{{ __t('student_feedback') }}</h4>
@@ -441,7 +441,7 @@
                         @endforeach
                     </div>
                 </div>
-            @endif --}}
+            @endif
 
         </div>
 

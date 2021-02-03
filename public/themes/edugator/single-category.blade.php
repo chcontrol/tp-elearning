@@ -36,7 +36,7 @@
 
     @if($courses->total())
         <div class="categories-course-wrapper my-4">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header-wrap">

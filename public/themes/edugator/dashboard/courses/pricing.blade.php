@@ -69,7 +69,9 @@
 
 
                         <div class="text-muted my-4">
-                            If the course is free, if student require to enroll your course, if not required enroll, if students required sign in to your website to take this course.
+                            {{-- If the course is free, if student require to enroll your course, if not required enroll, if students required sign in to your website to take this course. --}}
+                            หากหลักสูตรนี้ฟรีหากนักเรียนต้องการลงทะเบียนหลักสูตรของคุณ 
+                            หากไม่จำเป็นต้องลงทะเบียน หากนักเรียนจำเป็นต้องลงชื่อเข้าใช้เว็บไซต์ของคุณเพื่อเข้าร่วมหลักสูตรนี้
                         </div>
 
 

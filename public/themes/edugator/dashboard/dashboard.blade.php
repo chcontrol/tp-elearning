@@ -20,7 +20,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$enrolledCount}}</h4></div>
-                    <div>Courses Enrolled</div>
+                    <div>{{__t('enrolled')}}</div>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$myReviewsCount}}</h4></div>
-                    <div>My Reviews</div>
+                    <div>{{__t('reviews')}}</div>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
 
     @if($chartData)
         <div class="p-4 bg-white">
-            <h4 class="mb-4">My Earning for for the month ({{date('M')}})</h4>
+            <h4 class="mb-4">รายได้สำหรับเดือน ({{date('M')}})</h4>
 
             <canvas id="ChartArea"></canvas>
         </div>

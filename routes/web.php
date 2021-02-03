@@ -391,6 +391,9 @@ Route::post('/booking/update', [FullCalendarController::class, 'update']);
 Route::post('/booking/delete', [FullCalendarController::class, 'destroy']);
 
 
+// Route::get('/', 'HomeController@course_home')->name('course_home');
+// Route::get('/', 'HomeController@q_a')->name('q_a');
+// Route::get('/', 'HomeController@contact_as')->name('contact_as');
 
 
 

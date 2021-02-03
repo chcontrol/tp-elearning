@@ -47,12 +47,6 @@
                                 @endif
 
 
-                                <script>
-                                    $(document).ready(function(){
-                                        alert()
-                                        $('#videoElementID').bind('contextmenu',function() { return false; });
-                                    });
-                                </script>
 
 
                                 @if ($course->description)

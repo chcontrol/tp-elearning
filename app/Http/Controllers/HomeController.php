@@ -21,6 +21,8 @@ class HomeController extends Controller
         return view(theme('index'), compact('title', 'new_courses', 'featured_courses', 'popular_courses', 'posts','nav_home'));
     }
 
+    
+
     public function courses(Request $r){
         $title = __t('courses');
         $categories = Category::parent()->with('sub_categories')->get();

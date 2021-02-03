@@ -135,13 +135,13 @@
                 @if( ! empty($nav_home)) 
                 <ul class="navbar-nav main-nav-auth-profile-wrap text-right">
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('dashboard')}}">วิชาที่เปิดสอน</a>
+                        <a href="{{route('post', 'วิชาที่เปิดสอน')}}">วิชาที่เปิดสอน</a>
                     </li>
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('register')}}">คำถามที่พบบ่อย</a>
+                        <a href="{{route('post', 'คำถามที่พบบ่อย')}}">คำถามที่พบบ่อย</a>
                     </li>
                     <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('register')}}">ติดต่อเรา</a>
+                        <a href="{{route('post', 'ติดต่อเรา')}}">ติดต่อเรา</a>
                     </li>
                     <li class="nav-item dropdown mini-cart-item nav-text-header" >
                         <a href="{{route('register')}}">ลงทะเบียน</a> /

@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="blog-post-page-header bg-dark-blue text-white text-center py-5">
+    <div class="blog-post-page-header bg-dark-orange text-white text-center py-5">
         <div class="container py-3">
             <div class="row">
                 <div class="col-md-10 offset-md-1">

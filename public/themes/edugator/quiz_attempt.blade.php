@@ -7,7 +7,7 @@
         $q_limit = $attempt->questions_limit;
     @endphp
 
-    <div class="question-top-nav py-3 px-4 bg-dark-blue text-white">
+    <div class="question-top-nav py-3 px-4 bg-dark-orange text-white">
         <h4 class="m-0"><i class="la la-clipboard-list"></i> {{$quiz->title}}</h4>
     </div>
 

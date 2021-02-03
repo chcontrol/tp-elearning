@@ -3,16 +3,97 @@
 
 @section('content')
 
-    <div class="p-3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 1"
+                style="height: 214px; " />
+        </div>
+        <div class="item">
+            <img class="img-fluid" src="{{ theme_url('images/home/slider2.jpg') }}" alt="Image 2"
+                style="height: 214px;" />
+        </div>
+        <div class="item">
+            <img class="img-fluid" src="{{ theme_url('images/home/slider3.jpg') }}" alt="Image 3"
+                style="height: 214px;" />
+        </div>
+
+    </div>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 2,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                1000: {
+                    items: 2
+                },
+                1500: {
+                    items: 3
+                }
+            }
+        });
+        $('.play').on('click', function() {
+            owl.trigger('play.owl.autoplay', [1000])
+        })
+        $('.stop').on('click', function() {
+            owl.trigger('stop.owl.autoplay')
+        })
+
+
+    </script>
+
+
+    {{-- <div class="owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+            <div class="owl-item">
+                <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 2" />
+            </div>
+            <div class="owl-item">
+                <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 2" />
+            </div>
+            <div class="owl-item">
+                <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 2" />
+            </div>
+        </div>
+    </div>
+    <div class="owl-nav">
+        <div class="owl-prev">prev</div>
+        <div class="owl-next">next</div>
+    </div>
+    <div class="owl-dots">
+        <div class="owl-dot active"><span></span></div>
+        <div class="owl-dot"><span></span></div>
+        <div class="owl-dot"><span></span></div>
+    </div>
+</div> --}}
+
+
+
+    {{-- <div class="p-3">
         <div id="gallery" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" style="height: 214px">
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col" style="height: 214px;">
-                            <img class="img-fluid" src="{{ theme_url('images/home/slider1.png') }}" alt="Image 2" />
+                        <div class="col" class="col-md-12" style="height: 214px;">
+                            <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 2" />
                         </div>
                         <div class="col">
-                            <img class="img-fluid" src="{{ theme_url('images/home/slider2.png') }}" alt="Image 2" />
+                            <img class="img-fluid" src="{{ theme_url('images/home/slider2.jpg') }}" alt="Image 2" />
                         </div>
                     </div>
                 </div>
@@ -20,10 +101,10 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col">
-                            <img class="img-fluid" src="{{ theme_url('images/home/slider3.png') }}" alt="Image 2" />
+                            <img class="img-fluid" src="{{ theme_url('images/home/slider3.jpg') }}" alt="Image 2" />
                         </div>
                         <div class="col">
-                            <img class="img-fluid" src="{{ theme_url('images/home/slider1.png') }}" alt="Image 2" />
+                            <img class="img-fluid" src="{{ theme_url('images/home/slider1.jpg') }}" alt="Image 2" />
                         </div>
                     </div>
                 </div>
@@ -39,7 +120,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div>
+    </div> --}}
 
     <div class="p-3 mb-2 bg-light text-white">
         @if ($new_courses->count())
@@ -81,8 +162,7 @@
         @endif
     </div>
 
-    {{--
-    <div class="hero-banner py-3">
+    {{-- <div class="hero-banner py-3">
 
         <div class="container">
             <div class="row">
@@ -166,7 +246,7 @@
                 <div class="popular-courses-cards-wrap mt-3">
                     <div class="row">
                         @foreach ($featured_courses as $course)
-                            {!! course_card($course, 'col-md-4') !!}
+                            {!!  course_card($course, 'col-md-4') !!}
                         @endforeach
                     </div>
                 </div>
@@ -207,7 +287,7 @@
                 <div class="popular-courses-cards-wrap mt-3">
                     <div class="row">
                         @foreach ($featured_courses as $course)
-                            {!! course_card($course) !!}
+                            {!!  course_card($course) !!}
                         @endforeach
                     </div>
                 </div>
@@ -235,7 +315,7 @@
                 <div class="popular-courses-cards-wrap mt-3">
                     <div class="row">
                         @foreach ($new_courses as $course)
-                            {!! course_card($course) !!}
+                            {!!  course_card($course) !!}
                         @endforeach
                     </div>
                 </div>

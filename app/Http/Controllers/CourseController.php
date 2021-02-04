@@ -519,9 +519,12 @@ class CourseController extends Controller
             Section::whereId($sectionId)->update(array_except($section, 'content'));
 
             $contents = array_get($section, 'content');
-            foreach ($contents as $contentId => $content){
-                Content::whereId($contentId)->update(array_except($content, 'content'));
+            if($contents){
+                foreach ($contents as $contentId => $content){
+                    Content::whereId($contentId)->update(array_except($content, 'content'));
+                }
             }
+            
         }
 
         return back()->with('success', __t('drip_preference_saved'));

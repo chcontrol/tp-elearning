@@ -72,7 +72,7 @@ return [
     'whats_included'                => 'ส่วนประกอบของเนื้อหา',
     'select_topic'                  => 'Select Topic',
     'topic'                         => 'หัวข้อเนื้อหา',
-    'topics'                        => 'Topics',
+    'topics'                        => 'บทเรียน',
     'write_review'                  => 'Write Review',
     'update_review'                 => 'Update Review',
     'student_feedback'              => 'Student feedback',

@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="page-header-wrapper bg-light-sky py-4">
+    <div class="page-header-wrapper-grey bg-gray py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -39,8 +39,9 @@
                     <div class="col-md-4">
                         <div class="category-item-name">
 
-                            <a href="{{route('category_view', $category->slug)}}" style="background-color: {{$category->bg_color}};" class="py-4 d-block text-center text-white mb-3 ">
-                                <i class="la {{$category->icon_class}}"></i> {{$category->category_name}}
+                            {{-- <a href="{{route('category_view', $category->slug)}}" style="background-color: {{$category->bg_color}};" class="py-4 d-block text-center text-white mb-3 "> --}}
+                                <a href="{{route('category_view', $category->slug)}}" style="background-color: #EB763D;" class="py-4 d-block text-center text-white mb-3 ">
+                                    <i class="la {{$category->icon_class}}"></i> {{$category->category_name}}
                             </a>
                         </div>
                     </div>

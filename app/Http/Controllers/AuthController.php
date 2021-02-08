@@ -11,14 +11,26 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 
+use App\DataTables\UsersDataTable;
+
+
 class AuthController extends Controller
 {
 
-    public function login(){
+    public function login(UsersDataTable $dataTable){
         $title = __t('login');
         $nav_home = "Home";
+        // return view_template('login', compact('nav_home',));
+        // return $dataTable->render('users');
+
         return view_template('login', compact('nav_home',));
+
     }
+
+    // public function index(UsersDataTable $dataTable)
+    // {
+    //      return $dataTable->render('users');
+    // }
 
     public function loginPost(Request $request){
         $rules = [

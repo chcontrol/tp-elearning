@@ -9,6 +9,7 @@ use App\Course;
 use App\Review;
 use App\Section;
 use App\Content;
+use App\DataTables\UsersDataTable;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -709,7 +710,9 @@ class CourseController extends Controller
         return view(theme('dashboard.my_courses_reviews'), compact('title'));
     }
 
-    public function studentsList()
+    
+
+    public function studentsList(UsersDataTable $dataTable)
     {
         $title = __t('my_courses_reviews');
 
@@ -718,7 +721,18 @@ class CourseController extends Controller
         $getEarnings = DB::select(DB::raw($sql));
 
         return view(theme('dashboard.students_list'), compact('title', 'getEarnings'));
+        // return $dataTable->render('users');
+    }
 
+    public function studentsList2(UsersDataTable $dataTable)
+    {
+        $title = __t('my_courses_reviews');
+
+       $tabledata = $dataTable->render('users')->table();
+
+        // return view(theme('dashboard.students_list'), compact('title', 'getEarnings'));
+        return view(theme('dashboard.students_list2'), compact('title', 'tabledata'));
+        // return $dataTable->render('users');
     }
 
     public function anyData()

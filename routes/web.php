@@ -395,5 +395,16 @@ Route::post('/booking/delete', [FullCalendarController::class, 'destroy']);
 // Route::get('/', 'HomeController@q_a')->name('q_a');
 // Route::get('/', 'HomeController@contact_as')->name('contact_as');
 
+Route::get('users', 'UserController@index')->name('blog');
 
 
+Route::get('studentsList2', 'UserController@studentsList2123')->name('studentsList2');
+
+
+Route::get('/user/studentsList2', 'CourseController@studentsList2')->name('profile');
+
+
+
+Route::get('export', 'DemoController@export')->name('export');
+Route::get('importExportView', 'DemoController@importExportView');
+Route::post('import', 'DemoController@import')->name('import');

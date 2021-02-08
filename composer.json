@@ -17,6 +17,7 @@
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "maatwebsite/excel": "^3.1",
         "mollie/mollie-api-php": "^2.0",
         "stripe/stripe-php": "^7.29",
         "yajra/laravel-datatables-buttons": "^4.10",

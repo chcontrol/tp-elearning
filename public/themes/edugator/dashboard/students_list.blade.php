@@ -2,6 +2,24 @@
 
 @section('content')
 
+{{-- 
+<div class="container">
+    <div class="card bg-light mt-3">
+        <div class="card-body">
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="form-control">
+                <br>
+                <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+
+                <button class="btn btn-success">Import User Data</button>
+            </form>
+        </div>
+    </div>
+</div> --}}
+
+<a class="btn btn-warning" href="{{ route('export',['id'=>5]) }}">Export User Data</a>
+
     <table class="table table-bordered" id="users-table" style="width:100%">
         <thead>
             <tr>
@@ -13,7 +31,12 @@
             </tr>
         </thead>
     </table>
+
+
 @stop
+
+
+   
 
 
 
@@ -28,17 +51,18 @@
 <script>
     $(function() {
         $('#users-table').DataTable({
+            "scrollY":        "400px",
 
             dom: 'Bfrtip',
             buttons: [
                 'excel',
             ],
 
-            "paging": true,
+            "paging": false,
             "searching": true,
             "language": {
-                "lengthMenu": "แสดงทั้งหมด _MENU_ รายการ ต่อหน้า",
-                "zeroRecords": "ไม่มีรายชื่อนักเรียน",
+                "lengthMenu": "",
+                "zeroRecords": "ไม่มีรายชื่อนักเรียน แสดงทั้งหมด _MENU_ รายการ ต่อหน้า",
                 "info": "แสดง _PAGE_ หน้า จากทั้งหมด _PAGES_ หน้า",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(filtered from _MAX_ total records)",

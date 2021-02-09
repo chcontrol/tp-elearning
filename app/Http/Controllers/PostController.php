@@ -204,6 +204,7 @@ class PostController extends Controller
     }
 
     public function postSingle($slug){
+        echo $slug;
         $post = Post::whereSlug($slug)->first();
         if ( ! $post){
             abort(404);

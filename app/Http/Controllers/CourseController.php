@@ -716,11 +716,10 @@ class CourseController extends Controller
     {
         $title = __t('my_courses_reviews');
 
-        $sql = "SELECT * from users
-        WHERE 1=1";
-        $getEarnings = DB::select(DB::raw($sql));
+        $sql = "SELECT * from users  WHERE 1=1";
+        $getStudents = DB::select(DB::raw($sql));
 
-        return view(theme('dashboard.students_list'), compact('title', 'getEarnings'));
+        return view(theme('dashboard.students_list'), compact('title', 'getStudents'));
         // return $dataTable->render('users');
     }
 

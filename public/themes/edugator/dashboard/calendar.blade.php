@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @php
-    $courses = $auth_user->wishlist()->publish()->get();
-    @endphp
+  
 
 @endsection

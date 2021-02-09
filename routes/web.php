@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/importExportView', [DemoController::class, 'importExportView']);
+// Route::get('/export/{id}', [DemoController::class, 'export']);
+Route::get('/export/{id?}', [
+    'uses' => 'DemoController@export',
+], 'export');
+
+
+$router->get('/switchinfo/{prisw}/{secsw}',[
+    'uses' => 'SwitchinfoController@switchInfo',
+    'as'   => 'switch'
+]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('clear', 'HomeController@clearCache')->name('clear_cache');
@@ -133,7 +149,7 @@ Route::group(['prefix' => 'gateway-ipn'], function () {
 
 
 // Route::get('/greeting', 'DashboardController@index2')->name('dashboard');
-Route::get('/calendar', 'EventsController@index')->name('dashboard');
+// Route::get('/calendar', 'EventsController@index')->name('dashboard');
 Route::resource('events', 'EventsController',['only' => ['index', 'store', 'update', 'destroy']]);
 
 
@@ -406,5 +422,14 @@ Route::get('/user/studentsList2', 'CourseController@studentsList2')->name('profi
 
 
 Route::get('export', 'DemoController@export')->name('export');
-Route::get('importExportView', 'DemoController@importExportView');
+Route::get('/calendar', 'DemoController@importExportView')->name('dashboard');
+
 Route::post('import', 'DemoController@import')->name('import');
+
+Route::view('/welcome', 'welcome');
+
+
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
+

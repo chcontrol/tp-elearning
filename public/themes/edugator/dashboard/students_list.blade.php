@@ -18,7 +18,9 @@
     </div>
 </div> --}}
 
-<a class="btn btn-warning" href="{{ route('export',['id'=>5]) }}">Export User Data</a>
+
+
+<a class="btn btn-warning" href="{{ route('export',['slug'=>$slug]) }}">ดาวน์โหลดผลคะแนน วิชา {{$slug}}</a>
 
     <table class="table table-bordered" id="users-table" style="width:100%">
         <thead>
@@ -26,8 +28,8 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th>total scores</th>
+                <th>course id</th>
             </tr>
         </thead>
     </table>
@@ -76,7 +78,7 @@
 
             processing: true,
             serverSide: true,
-            ajax: '{{ route('datatable') }}',
+            ajax: "{{ route('datatable',['slug'=>$slug]) }}",
             columns: [{
                     data: 'id',
                     name: 'id'
@@ -90,12 +92,12 @@
                     name: 'email'
                 },
                 {
-                    data: 'created_at',
-                    name: 'created_at'
+                    data: 'total_scores',
+                    name: 'total_scores'
                 },
                 {
-                    data: 'updated_at',
-                    name: 'updated_at'
+                    data: 'course_id',
+                    name: 'course_id'
                 }
             ]
         });

@@ -96,6 +96,13 @@ where course_user.user_id = {$this->id} and reviews.status = 1";
         return $rating;
     }
 
+   
+
+    public function getGetRatingAttribute2(){
+        $getStudents = DB::select("SELECT * from users  WHERE 1=1");
+        return $getStudents;
+    }
+
     public function isAdmin(){
         return $this->user_type === 'admin';
     }

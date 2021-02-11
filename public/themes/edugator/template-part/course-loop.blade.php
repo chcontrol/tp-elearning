@@ -1,5 +1,5 @@
 <?php
-$gridClass = $grid_class ? $grid_class : 'col-md-2';
+$gridClass = $grid_class ? $grid_class : 'col-md-3';
 ?>
 
 

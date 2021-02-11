@@ -64,12 +64,12 @@ class UsersExport implements FromCollection, WithHeadings,WithHeadingRow
         // echo gettype(User::where('id', '!=', $this->id)->get(['id']));
         // echo User::where('id', '!=', $this->id)->get(['id', 'name','email']);
         
-        return  DB::table('users')
-            ->where('courses.slug', '=', $this->slug)
-            ->join('attempts', 'users.id', '=', 'attempts.id')
-            ->join('courses', 'courses.id', '=', 'attempts.id')
-            ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'courses.slug')
-            ->get();
+        return  DB::table('attempts')
+        ->where('courses.slug', '=', $this->slug)
+        ->join('users', 'users.id', '=', 'attempts.user_id')
+        ->join('courses', 'courses.id', '=', 'attempts.course_id')
+        ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
+        ->get();
         // return $this->hasManyThrough(Deployment::class, Environment::class);
 
     }

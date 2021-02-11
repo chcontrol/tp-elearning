@@ -770,10 +770,10 @@ class CourseController extends Controller
         //     ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
         //     ->get();
         return Datatables::of(
-            DB::table('users')
+            DB::table('attempts')
             ->where('courses.slug', '=', $slug)
-            ->join('attempts', 'users.id', '=', 'attempts.id')
-            ->join('courses', 'courses.id', '=', 'attempts.id')
+            ->join('users', 'users.id', '=', 'attempts.user_id')
+            ->join('courses', 'courses.id', '=', 'attempts.course_id')
             ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
             ->get()
                 

@@ -105,13 +105,23 @@ ul{
 }
 .btn-theme-primary{
     color: #fff !important;
-    background-color: #2073d4;
-    border-color: #2073d4;
+    background-color: #EB763D;
+    border-color: #EB763D;
 }
 .btn-theme-primary:hover{
     color: #fff;
-    background-color: #005bbe;
-    border-color: #005bbe;
+    background-color: #932D1E;
+    border-color: #932D1E;
+}
+.btn-theme-primary2{
+    color: #41474B !important;
+    background-color: #CFD4D8;
+    border-color: #41474B;
+}
+.btn-theme-primary2:hover{
+    color: #fff !important;
+    background-color: #EB763D;
+    border-color: #EB763D;
 }
 .btn-login-outline{
     color: rgba(0,0,0,.6);

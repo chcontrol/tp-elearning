@@ -29,7 +29,6 @@
 
     <!-- modernizr css -->
     <script src="{{asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
     <script type="text/javascript">
@@ -37,48 +36,24 @@
         window.pageData = @json(pageJsonData());
         /* ]]> */
     </script>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
-
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
-<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-
-
-
-<script src="http://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" defer></script>
-
-
-
-
-
-
 </head>
 <body class="{{get_option('enable_rtl')? 'rtl' : ''}}">
 
 <div class="main-navbar-wrap">
-    
+
     <div style="background-color: #EB763D;padding:10px"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid" style="background-color: white;">
-            <a style="" class="navbar-brand site-main-logo" href="{{route('home')}}">
+
+        <div class="container">
+            <a class="navbar-brand site-main-logo" href="{{route('home')}}">
                 @php
                     $logoUrl = media_file_uri(get_option('site_logo'));
                 @endphp
 
                 @if($logoUrl)
-                    <img src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
-                    {{-- <img src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" /> --}}
+                    <img src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
                 @else
-                    {{-- <img src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" /> --}}
-                    <img src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
-
+                <img src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
                 @endif
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,10 +63,7 @@
             <div class="collapse navbar-collapse" id="mainNavbarContent">
                 <ul class="navbar-nav categories-nav-item-wrapper">
                     <li class="nav-item nav-categories-item">
-                        @if( empty($nav_home)) 
-                            <a class="nav-link browse-categories-nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}</a>
-                        @endif 
-                        
+                        <a class="nav-link browse-categories-nav-link" href="{{route('categories')}}"> <i class="la la-th-large"></i> {{__t('categories')}}</a>
 
                         <div class="categories-menu">
                             <ul class="categories-ul-first">
@@ -124,48 +96,27 @@
                     </li>
 
                 </ul>
-                @if(  empty($nav_home) ) 
+
                 <div class="header-search-wrap ml-2">
                     <form action="{{route('courses')}}" class="form-inline " method="get">
                         <input class="form-control" type="search" name="q" value="{{request('q')}}" placeholder="Search">
                         <button class="btn my-2 my-sm-0 header-search-btn" type="submit"><i class="la la-search"></i></button>
                     </form>
                 </div>
-                @endif
-                @if( ! empty($nav_home)) 
-                <ul class="navbar-nav main-nav-auth-profile-wrap text-right">
-                    <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('categories')}}">วิชาที่เปิดสอน</a>
-                    </li>
-                    <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('post', 'คำถามที่พบบ่อย')}}">คำถามที่พบบ่อย</a>
-                    </li>
-                    <li class="nav-item dropdown mini-cart-item nav-text-header">
-                        <a href="{{route('post', 'ติดต่อเรา')}}">ติดต่อเรา</a>
-                    </li>
-                    <li class="nav-item dropdown mini-cart-item nav-text-header" >
-                        <a href="{{route('register')}}">ลงทะเบียน</a> /
-                        <a href="{{route('register')}}"> ลืมรหัสผ่าน</a> 
-                     </li>
-                </ul>
-                @endif
 
                 <ul class="navbar-nav main-nav-auth-profile-wrap">
 
-                    {{-- <li class="nav-item dropdown mini-cart-item">
+                    <li class="nav-item dropdown mini-cart-item">
                         {!! view_template_part('template-part.minicart') !!}
-                    </li> --}}
+                    </li>
 
                     @if (Auth::guest())
                         <li class="nav-item mr-2 ml-2">
-                            <a class="nav-link btn btn-login-outline" 
-                            style="border-color: #EB763D; border-radius: 5px; padding-left:2em; padding-right:2em;border-width: 3px;" 
-                            href="{{route('login')}}"> {{__t('login')}}</a>
-                            {{-- <a class="nav-link btn btn-login-outline" href="{{route('login')}}"> <i class="la la-sign-in"></i> {{__t('login123')}}</a> --}}
+                            <a class="nav-link btn btn-login-outline" href="{{route('login')}}"> <i class="la la-sign-in"></i> {{__t('login')}}</a>
                         </li>
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link btn btn-theme-primary" href="{{route('register')}}"> <i class="la la-user-plus"></i> {{__t('signup')}}</a>
-                        </li> --}}
+                        </li>
                     @else
                         <li class="nav-item main-nav-right-menu nav-item-user-profile">
                             <a class="nav-link profile-dropdown-toogle" href="javascript:;">

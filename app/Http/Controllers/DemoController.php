@@ -30,8 +30,7 @@ class DemoController extends Controller
         // return (new UsersExport)->forYear(2018)->download('invoices.xlsx');
 
         // return (new UsersExport($id->id))->download('invoices.xlsx');
-        return Excel::download(new UsersExport($slug->slug), 'MttRegistrations.xlsx');
-
+        return Excel::download(new UsersExport($slug->slug), 'ผลคะแนนนักเรียน.xlsx');
 
     }
    

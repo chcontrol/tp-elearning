@@ -1124,6 +1124,7 @@ END Media Manager
 }
 .price-html-wrap{
     color: #505763;
+    text-align: right;
 }
 .price-html-wrap span{
     vertical-align: middle;

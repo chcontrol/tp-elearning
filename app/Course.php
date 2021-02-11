@@ -223,7 +223,8 @@ class Course extends Model
                 if ($showOff) {
                     $discount = number_format( 100 - ($this->sale_price * 100   / $this->price)   , 2);
                     $offText = $discount . '% ' . __t('off');
-                    $price_html .= " <span class='discount-text mr-2'>{$offText}</span>";
+                    // $price_html .= " <span class='discount-text mr-2'>{$offText}</span>";
+                    $price_html .= "";
                 }
             }
 

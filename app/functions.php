@@ -284,7 +284,8 @@ if ( ! function_exists('media_image_uri')){
         $sizes['full'] = "Original Image";
 
         foreach ($sizes as $img_size => $name){
-            $sizes[$img_size] = asset('uploads/placeholder-image.png');
+            // $sizes[$img_size] = asset('uploads/placeholder-image.png');
+            $sizes[$img_size] = asset('uploads/CoverImg.jpg');
         }
 
         if ($media){

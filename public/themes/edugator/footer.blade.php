@@ -1,16 +1,16 @@
 
-<footer class="d-none">
+<footer >
 
     <div class="footer-top py-5">
 
         <div class="container">
             <div class="row">
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="footer-widget-wrap">
-                        <h4>About US</h4>
-                        <p class="footer-about-us-desc">
-                            Teachify is a LMS platform that connect Teachers with Students globally. Teachers crate high quality course and present them in super easy way. Teachify LMS created by <a href="https://themeqx.com" target="_blank">Themeqx</a>
+                        <h4>เกี่ยวกับเรา</h4>
+                        <p class="footer-about-us-desc" style="font-size: 13px;">
+                            ผู้ให้บริการตรวจรับรองมาตรฐาน ISO & Food Safety ทุกระบบ แบบ One Stop Service ครบกระบวนการจบในที่เดียว ง่ายสะดวกรวดเร็วราคาประหยัด โดยเรามีบริการครบวงจรจบในที่เดียว ราคาประหยัด ไม่แพงอย่างที่ท่านคิด สะดวกรวดเร็วและประหยัดเวลาในการตรวจรับรอง การันตีความสำเร็จในทุกมาตรฐาน                        
                         </p>
                         <p class="footer-social-icon-wrap">
                             <a href="#"><i class="la la-facebook"></i> </a>
@@ -23,32 +23,37 @@
 
                 <div class="col-md-3">
                     <div class="footer-widget-wrap contact-us-widget-wrap">
-                        <h4>Contact</h4>
+                        <h4>สนใจการให้บริการติดต่อ</h4>
                         <p class="footer-address">
-                            USA, New York 144, Next Avenue, New York
+                            <p><a href="#"><i class="la la-comments"></i> http://m.me/megacert.broker</a></p>
+                            <p><a href="#"><i class="la la-phone"></i> https://lin.ee/AvHt8cX</a></p>
+                            <p><a href="#"><i class="la la-laptop"></i> https://megacer.com/</a></p>
+                            <p><a href="#"><i class="la la-phone"></i> 02 114 7679</p>
+                            <p><a href="#"><i class="la la-mail-bulk"></i> info@megacer.com</p>
                         </p>
 
-                        <p class="mb-0"> Tel.: +1 234 452 341 55 </p>
+                        {{-- <p class="mb-0"> Tel.: +1 234 452 341 55 </p>
                         <p class="mb-0"> Fax: +1 979 132 225 675 </p>
-                        <p class="mb-0"> info@demo.com </p>
+                        <p class="mb-0"> info@demo.com </p> --}}
                     </div>
                 </div>
 
 
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="footer-widget-wrap link-widget-wrap">
 
                         <ul class="footer-links">
                             <li><a href="{{route('home')}}">{{__t('home')}}</a> </li>
-                            <li><a href="{{route('dashboard')}}">{{__t('dashboard')}}</a> </li>
+                            <li><a href="{{route('dashboard')}}">{{__t('settings')}}</a> </li>
                             <li><a href="{{route('courses')}}">{{__t('courses')}}</a> </li>
-                            <li><a href="{{route('popular_courses')}}">{{__t('popular_courses')}}</a> </li>
-                            <li><a href="{{route('featured_courses')}}">{{__t('featured_courses')}}</a> </li>
-                            <li><a href="{{route('blog')}}">{{__t('blog')}}</a> </li>
+                            <li><a href="{{route('dashboard')}}">{{__t('dashboard')}}</a> </li>
+                            <li><a href="{{route('register')}}">{{__t('register')}}</a> </li>
+                            {{-- <li><a href="{{route('featured_courses')}}">{{__t('featured_courses')}}</a> </li> --}}
+                            {{-- <li><a href="{{route('blog')}}">{{__t('blog')}}</a> </li>
                             <li><a href="{{route('post_proxy')}}">{{__t('about_us')}}</a> </li>
                             <li><a href="{{route('register')}}">{{__t('signup')}}</a> </li>
-                            <li><a href="#">Contact Us</a> </li>
+                            <li><a href="#">Contact Us</a> </li> --}}
                         </ul>
 
                     </div>
@@ -65,14 +70,14 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="footer-bottom-contents-wrap d-flex">
+                    <div class="footer-bottom-contents-wrap d-flex" style="justify-content: center;">
 
-                        <div class="footer-bottom-left d-flex">
-                            <h5 class="text-warning">teachify LMS</h5>
-                            <span class="ml-4">Copyright © 2020 teachify. All rights reserved.</span>
+                        <div class="footer-bottom-left d-flex" >
+                            {{-- <h5 class="text-warning">teachify LMS</h5> --}}
+                            <span class="ml-4" style="font-size:20px">Copyright © 2020 teachify. All rights reserved.</span>
                         </div>
 
-                        <div class="footer-bottom-right flex-grow-1 text-right">
+                        {{-- <div class="footer-bottom-right flex-grow-1 text-right">
                             <ul class="footer-bottom-right-links">
                                 <li>
                                     <a href="{{route('post_proxy', get_option('terms_of_use_page'))}}">
@@ -86,7 +91,7 @@
                                 </li>
 
                             </ul>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>

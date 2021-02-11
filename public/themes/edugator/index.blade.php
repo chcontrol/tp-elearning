@@ -22,7 +22,7 @@
 
                 <div class="col-md-12 col-lg-6 hero-right-col">
                     <div class="hero-right-wrap">
-                        <img src="{{theme_url('images/hero-image.png')}}" class="img-fluid" />
+                        {{-- <img src="{{theme_url('images/slider-2.jpg')}}" class="img-fluid" /> --}}
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
 
                                 <a href="{{route('courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_courses')}}</a>
                             </h3>
-                            <p class="section-subtitle">{{__t('new_arrival_desc')}}</p>
+                            {{-- <p class="section-subtitle">{{__t('new_arrival_desc')}}</p> --}}
                         </div>
                     </div>
                 </div>

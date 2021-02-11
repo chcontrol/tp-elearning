@@ -115,7 +115,7 @@ ul{
 }
 .btn-theme-primary2{
     color: #41474B !important;
-    background-color: #CFD4D8;
+    background-color: #ffffff;
     border-color: #41474B;
 }
 .btn-theme-primary2:hover{
@@ -355,15 +355,15 @@ Hero Section
 
 .hero-banner {
     padding: 100px 0;
-    background: #d1d1d1 url(../../images/hero-background.png) no-repeat scroll center center / cover;
+    background: #ffffff url(../../images/slider-2.jpg) no-repeat scroll center center / cover;
     position: relative;
 }
 .hero-banner::before {
-    content: "";
+    /* content: "";
     background: #dddddd;
     height: 100%;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.5; */
     position: absolute;
     top: 0;
     width: 100%;
@@ -1097,11 +1097,14 @@ END Media Manager
 }
 .page-header-jumborton{
     min-height:220px;
-    background:-webkit-linear-gradient(315deg, #E9ECEF 0%, #E9ECEF 100%);
-    background:linear-gradient(135deg, #E9ECEF 0%, #E9ECEF 100%);
+    /* background:-webkit-linear-gradient(315deg, #E9ECEF 0%, #E9ECEF 100%);
+    background:linear-gradient(135deg, #E9ECEF 0%, #E9ECEF 100%); */
+    background: #ffffff url(../../images/title_bg.jpg) no-repeat scroll center center / cover;
+
 }
 .page-header-jumborton .page-header-left{
-    color: #124484;
+    /* color: #124484; */
+    color: #FFFFFF;
 }
 .page-header-jumborton h1{
     font-weight: 300;
@@ -1635,11 +1638,12 @@ Footer Section
 
 footer{
     font-size: 14px;
-    position: relative;
+    /* position: relative; */
     color: #ffffff;
-    background: #d1d1d1 url(../../images/footer-bg.svg) no-repeat scroll center center / cover;
+    /* background: #d1d1d1 url(../../images/footer-bg.svg) no-repeat scroll center center / cover; */
+    background: #ffffff url(../../images/footer_bg.jpg) no-repeat scroll center center / cover;
 }
-footer::before {
+/* footer::before {
     content: "";
     background: #000000;
     height: 100%;
@@ -1648,7 +1652,7 @@ footer::before {
     position: absolute;
     top: 0;
     width: 100%;
-}
+} */
 footer a{
     color: #ffffff;
 }

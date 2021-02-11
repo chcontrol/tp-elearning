@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'home'                          => 'Home',
+    'home'                          => 'หน้าแรก',
     'home_page_title'               => 'Build skills by talking online courses, at anytime, from anywhere',
     'login'                         => 'เข้าสู่ระบบ',
     'signup'                        => 'Sign Up',
@@ -11,7 +11,7 @@ return [
     'hero_subtitle'                 => 'Learn your favorite course, build your skills. <br /> Enrolll course online from world-class instructors.',
     'categories'                    => 'ประเภท',
     'all_categories'                => 'All Categories',
-    'add_to_cart'                   => 'Add to cart',
+    'add_to_cart'                   => 'ลงทะเบียน',
     'in_cart'                       => 'In Cart',
     'courses'                       => 'หลักสูตร',
     'students'                      => 'นักเรียน',
@@ -29,7 +29,7 @@ return [
     'featured_courses'              => 'Featured courses',
     'popular_courses'               => 'Popular courses',
     'all_popular_courses'           => 'All Popular Courses',
-    'new_arrival'                   => 'New Arrival',
+    'new_arrival'                   => 'MEGA CER Learning Space',
     'popular_courses_desc'          => 'Discover our most popular courses for self learning',
     'featured_courses_desc'         => 'Top quality courses has been featured, hand picked by us',
     'new_arrival_desc'              => 'Quality courses just arrived',
@@ -86,7 +86,7 @@ return [
 
     //Start Dashboard
 
-    'dashboard'                     => 'Dashboard',
+    'dashboard'                     => 'หน้าหลัก',
     'title'                         => 'หัวข้อ',
     'short_description'             => 'คำอธิบาย',
     'requirements_desc'             => 'สิ่งที่ผู้เรียนควรมีความรู้พื้นฐาน หรือเครื่องมือใดบ้างในการเริ่มหลักสูตรนี้. (อธิบายเป็นรายข้อ).',
@@ -196,7 +196,7 @@ return [
     'drip_preference_saved'         => 'Content Drip preference saved successfully',
     'require_login'                 => 'ต้องเข้าสู่ระบบ',
     'require_enroll'                => 'ต้องลงทะเบียน',
-    'enroll_now'                    => 'สมัครเลย !!',
+    'enroll_now'                    => 'ลงทะเบียนเรียน',
     'reset_filter'                  => 'Reset Filter',
     'add_instructors'               => 'Add Instructors',
     'view_profile'                  => 'View Profile',
@@ -344,6 +344,7 @@ return [
     'admin.categories'                    => 'การแยกประเภทบทเรียน',
     'plugins'                    => 'ปลั๊กอิน',
     'themes'                    => 'ธีม',
+    'settings'                    => 'การตั้งค่า',
     'general_settings'                    => 'การตั้งค่าทั่วไป',
     'lms_settings'                    => 'ตั้งค่า LMS',
     'payment_settings'                    => 'ตั้งค่าช่องทางการชำระเงิน',

@@ -24,15 +24,18 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
         <div class="course-card-contents">
             <a href="{{route('course', $course->slug)}}">
                 <h4 class="course-card-title-new mb-3">{{$course->title}}</h4>
-                {{-- <p class="course-card-short-info mb-2 d-flex justify-content-between">
+                <p class="course-card-short-info mb-2 d-flex justify-content-between">
                     <span><i class="la la-play-circle"></i> {{$course->total_lectures}} {{__t('lectures')}}</span>
                     <span><i class="la la-signal"></i> {{course_levels($course->level)}}</span>
-                </p> --}}
+                </p>
             </a>
 
             <div class="course-card-info-wrap-new">
-                {{-- <p class="course-card-author d-flex justify-content-between">
-                    
+                
+                <p class="course-card-author d-flex justify-content-between">
+                    <span >
+                        <a style="font-size: 0.8rem;color: #9BA3B5 " href="{{route('profile', $course->user_id)}}">{{$course->author->name}}</a>
+                    </span>
                     @if($course->category)
                         <span>
                             <i class="la la-folder"></i> in <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
@@ -47,7 +50,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                             <span class="text-muted star-ratings-count">({{$course->rating_count}})</span>
                         </div>
                     </div>
-                @endif --}}
+                @endif
                 <div class="course-card-ratings">
                     <div class="star-ratings-group d-flex">
                         {!! star_rating_generator($course->rating_value) !!}
@@ -56,34 +59,35 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                     </div>
                 </div>
                 <div class="text-right text-danger">
-                    {!! $course->price_html(false, false) !!} บาท
+                    {!! $course->price_html(false, false) !!} 
                 </div>
             </div>
 
             <div class="course-card-footer mt-3 h6 text-right">
                
                 
-                <span >
-                    <a style="font-size: 0.8rem;color: #9BA3B5 " href="{{route('profile', $course->user_id)}}">{{$course->author->name}}</a>
-                </span>
-                {{-- <div class="course-card-cart-wrap d-flex justify-content-between">
-                    {!! $course->price_html(false, false) !!}
-
+                
+                <div class="course-card-cart-wrap d-flex justify-content-between">
+                    {{-- {!! $course->price_html(false, false) !!} --}}
+                    <div class="course-card-btn-wrap"></div>
                     <div class="course-card-btn-wrap">
                         @if($auth_user && in_array($course->id, $auth_user->get_option('enrolled_courses', []) ))
                             <a href="{{route('course', $course->slug)}}">{{__t('enrolled')}}</a>
                         @else
                             @php($in_cart = cart($course->id))
-                            <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"  data-course-id="{{$course->id}}" {{$in_cart? 'disabled="disabled"' : ''}}>
-                                @if($in_cart)
-                                    <i class='la la-check-circle'></i> {{__t('in_cart')}}
+                            {{-- <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"  data-course-id="{{$course->id}}" {{$in_cart? 'disabled="disabled"' : ''}}> --}}
+                                <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"  data-course-id="{{$course->id}}" {{$in_cart? 'disabled="disabled"' : ''}}>
+                                    @if($in_cart)
+                                    {{-- <i class='la la-check-circle'> --}}
+                                        </i> {{__t('in_cart')}}
                                 @else
-                                    <i class="la la-shopping-cart"></i> {{__t('add_to_cart')}}
+                                    {{-- <i class="la la-shopping-cart"></i> --}}
+                                     {{__t('add_to_cart')}}
                                 @endif
                             </button>
                         @endif
                     </div>
-                </div> --}}
+                </div>
             </div>
 
         </div>

@@ -78,9 +78,9 @@ class DashboardController extends Controller
         $title = __t('dashboard');
         $chartData = null;
 
-        return view(theme('dashboard.calendar'), compact('title', 'chartData'));
+        // return view(theme('dashboard.calendar'), compact('title', 'chartData'));
 
-        // return view('fullcalendar');
+        return view('fullcalendar');
     }
 
     public function profileSettings()

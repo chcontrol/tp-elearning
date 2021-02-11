@@ -2,13 +2,27 @@
 $gridClass = $grid_class ? $grid_class : 'col-md-3';
 ?>
 
-
+@php
+    if(isset($auth_user->id)){
+    $user_id = $auth_user->id;
+    }
+    @endphp
 
 <div class="{{$gridClass}} course-card-grid-wrap ">
     <div class="course-card mb-5">
 
         <div class="course-card-img-wrap">
+            <div class="dropdown" style="text-align: right;z-index:1;margin-right: 2.5em;">
+                
+                <button style="opacity: 0.2;position: absolute;z-index:1;" type="button" class="btn btn-secondary  btn-circle  " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               ...
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">พิมพ์ใบรับรอง</a>
+                </div>
+              </div>
             <a href="{{route('course', $course->slug)}}">
+                
                 <img src="{{$course->thumbnail_url}}"  style="min-height: 137px; height:137px" />
             </a>
 

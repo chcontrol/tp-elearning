@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
-
+use App\Http\Controllers\FullCalendarController;
+use App\Http\Controllers\EventsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,14 @@ use App\Http\Controllers\DemoController;
 |
 */
 
+
+Route::get('blog2', 'PostController@blog2')->name('blog2');
+Route::get('calendar',[FullCalendarController::class, 'index']);
+Route::post('/booking/create', [FullCalendarController::class, 'create']);
+Route::post('/booking/update', [FullCalendarController::class, 'update']);
+Route::post('/booking/delete', [FullCalendarController::class, 'destroy']);
+
+Route::resource('events', 'EventsController',['only' => ['index', 'store', 'update', 'destroy']]);
 
 
 Route::get('/importExportView', [DemoController::class, 'importExportView']);
@@ -156,7 +165,7 @@ Route::resource('events', 'EventsController',['only' => ['index', 'store', 'upda
 Route::get('/calendar2', function () {
     return view('fullcalendar2');
 });
-Route::get('/calendar', 'DashboardController@calendar')->name('dashboard');
+// Route::get('/calendar', 'DashboardController@calendar')->name('dashboard');
 
 
 
@@ -400,11 +409,6 @@ Route::get('{slug}', 'PostController@postSingle')->name('post');
 Route::get('post/{id?}', 'PostController@postProxy')->name('post_proxy');
 
 
-Route::get('blog2', 'PostController@blog2')->name('blog2');
-// Route::get('booking',[FullCalendarController::class, 'index']);
-Route::post('/booking/create', [FullCalendarController::class, 'create']);
-Route::post('/booking/update', [FullCalendarController::class, 'update']);
-Route::post('/booking/delete', [FullCalendarController::class, 'destroy']);
 
 
 // Route::get('/', 'HomeController@course_home')->name('course_home');
@@ -422,7 +426,7 @@ Route::get('/user/studentsList2', 'CourseController@studentsList2')->name('profi
 
 
 Route::get('export', 'DemoController@export')->name('export');
-Route::get('/calendar', 'DemoController@importExportView')->name('dashboard');
+// Route::get('/calendar', 'DemoController@importExportView')->name('dashboard');
 
 Route::post('import', 'DemoController@import')->name('import');
 

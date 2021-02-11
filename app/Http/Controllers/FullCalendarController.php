@@ -17,7 +17,12 @@ class FullCalendarController extends Controller
 			$data = Booking::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
 			return Response::json($data);
 		}
-		return view('fullcalendar');
+		//return view('fullcalendar');
+		$title = __t('dashboard');
+        $chartData = null;
+
+        return view(theme('dashboard.calendar'), compact('title', 'chartData'));
+
 	}
 	public function create(Request $request)
 	{

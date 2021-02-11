@@ -1385,6 +1385,8 @@ if ( ! function_exists('course_card')) {
     }
 }
 
+
+
 if (! function_exists('countries')) {
     function countries($country_id = null){
         if (!$country_id) {

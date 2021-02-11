@@ -10,7 +10,7 @@
                 <div class="col-md-12 col-lg-6">
 
                     <div class="hero-left-wrap">
-                        <h1 class="hero-title mb-4">{{__t('hero_title')}}</h1>
+                        <h1 style="color:#EB763D" class="hero-title mb-4">{{__t('hero_title')}}</h1>
                         <p class="hero-subtitle  mb-4">
                             {!! __t('hero_subtitle') !!}
                         </p>

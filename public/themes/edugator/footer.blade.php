@@ -10,13 +10,12 @@
                     <div class="footer-widget-wrap">
                         <h4>เกี่ยวกับเรา</h4>
                         <p class="footer-about-us-desc" style="font-size: 13px;">
-                            ผู้ให้บริการตรวจรับรองมาตรฐาน ISO & Food Safety ทุกระบบ แบบ One Stop Service ครบกระบวนการจบในที่เดียว ง่ายสะดวกรวดเร็วราคาประหยัด โดยเรามีบริการครบวงจรจบในที่เดียว ราคาประหยัด ไม่แพงอย่างที่ท่านคิด สะดวกรวดเร็วและประหยัดเวลาในการตรวจรับรอง การันตีความสำเร็จในทุกมาตรฐาน                        
-                        </p>
-                        <p class="footer-social-icon-wrap">
+                            ผู้ให้การอบรมแบบ E-Learning เกี่ยวข้องกับ ISO & Food Safety ทุกระบบ มีมาตรฐานเป็นที่ยอมรับ ครบวงจรจบในที่เดียว ราคาประหยัด ไม่แพงอย่างที่ท่านคิด การันตีความสำเร็จในทุกมาตรฐาน                        </p>
+                        {{-- <p class="footer-social-icon-wrap">
                             <a href="#"><i class="la la-facebook"></i> </a>
                             <a href="#"><i class="la la-twitter"></i> </a>
                             <a href="#"><i class="la la-youtube"></i> </a>
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
 
@@ -25,11 +24,11 @@
                     <div class="footer-widget-wrap contact-us-widget-wrap">
                         <h4>สนใจการให้บริการติดต่อ</h4>
                         <p class="footer-address">
-                            <p><a href="#"><i class="la la-comments"></i> http://m.me/megacert.broker</a></p>
-                            <p><a href="#"><i class="la la-phone"></i> https://lin.ee/AvHt8cX</a></p>
-                            <p><a href="#"><i class="la la-laptop"></i> https://megacer.com/</a></p>
-                            <p><a href="#"><i class="la la-phone"></i> 02 114 7679</p>
-                            <p><a href="#"><i class="la la-mail-bulk"></i> info@megacer.com</p>
+                            <span><a href="#"><i class="la la-comments"></i> http://m.me/megacert.broker</a></span><br>
+                            <span><a href="#"><i class="la la-phone"></i> https://lin.ee/AvHt8cX</a></span><br>
+                            <span><a href="#"><i class="la la-laptop"></i> https://megacer.com/</a></span><br>
+                            <span><a href="#"><i class="la la-phone"></i> 02 114 7679</span><br>
+                            <span><a href="#"><i class="la la-mail-bulk"></i> info@megacer.com</span>
                         </p>
 
                         {{-- <p class="mb-0"> Tel.: +1 234 452 341 55 </p>
@@ -74,7 +73,7 @@
 
                         <div class="footer-bottom-left d-flex" >
                             {{-- <h5 class="text-warning">teachify LMS</h5> --}}
-                            <span class="ml-4" style="font-size:20px">Copyright © 2020 teachify. All rights reserved.</span>
+                            <span class="ml-4" style="font-size:20px">Copyright © 2021 Tansamai. All rights reserved.</span>
                         </div>
 
                         {{-- <div class="footer-bottom-right flex-grow-1 text-right">

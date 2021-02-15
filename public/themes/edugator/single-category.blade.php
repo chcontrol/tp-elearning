@@ -12,7 +12,7 @@
                         {!! generateBreadcrumb($category) !!}
                     </nav>
 
-                    <h1 class="mb-3">{{$category->category_name}}</h1>
+                    <h1 class="mb-3 font-header-bg-primary">{{$category->category_name}}</h1>
 
                     @if($category->sub_categories->count())
 
@@ -25,6 +25,8 @@
                 </div>
 
             </div>
+
+
         </div>
 
     </div>
@@ -36,7 +38,7 @@
 
     @if($courses->total())
         <div class="categories-course-wrapper my-4">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header-wrap">

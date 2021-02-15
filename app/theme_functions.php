@@ -92,6 +92,12 @@ function dashboard_menu(){
             'icon' => '<i class="la la-tools"></i>',
             'is_active' => request()->is('dashboard/settings*'),
         ],
+        'calendar' => [
+            'name' => __t('calendar'),
+            'icon' => '<i class="la la-calendar"></i>',
+            'is_active' => request()->is('dashboard/calendar*'),
+        ],
+        
     ]);
 
     if ($user->is_admin){

@@ -44,7 +44,7 @@
                                     @include(theme('video-player'), ['model' => $course, 'video_caption' => __t('preview')])
                                 @else
                                     <img id='videoElementID' src="{{ media_image_uri($course->thumbnail_id)->image_md }}"
-                                        class="img-fluid" />
+                                        class="img-fluid" style="height: 100%" />
                                 @endif
 
 
@@ -83,7 +83,7 @@
                             </div>
                             <div class="col-md-6">
 
-                                <div class="course-whats-included-box course-widget p-4" style="border: ridge">
+                                <div class="course-whats-included-box course-widget p-4" style="border:2px solid #CFD4D8">
                                     {{-- <h3 class="mb-4"> {{ clean_html($course->title) }}</h3> --}}
                                     {{-- <h4 class="mb-4">{{ __t('whats_included') }}</h4> --}}
 

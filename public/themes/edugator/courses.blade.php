@@ -28,7 +28,7 @@
                             @endif
                         </ol>
                     </nav>
-                    <h1 class="mb-3">{{$title}}</h1>
+                    <h1 class="mb-3 font-header-bg-primary">{{$title}}</h1>
                 </div>
 
             </div>

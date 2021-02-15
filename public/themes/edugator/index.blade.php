@@ -10,10 +10,21 @@
                 <div class="col-md-12 col-lg-6">
 
                     <div class="hero-left-wrap">
-                        <h1 style="color:#EB763D" class="hero-title mb-4">{{__t('hero_title')}}</h1>
-                        <p class="hero-subtitle  mb-4">
-                            {!! __t('hero_subtitle') !!}
+                        <h2 style="color:#EB763D" class="hero-title mb-4">{{__t('hero_title')}}</h2>
+                        <p>
+                            <span class="hero-subtitle ">
+                                ผู้นำด้านศูนย์การอบรม e-learning
+                            </span>
+                        </br>
+                            <span class="hero-subtitle ">
+                                ที่มีมาตรฐานเป็นที่ยอมรับ
+                            </span>
                         </p>
+                        
+                <span style="color:#EB763D">
+                        สนใจเข้าเรียนออนไลน์
+                    </span>
+                </br>
                         <a href="{{route('categories')}}" class="btn btn-theme-primary2 btn-lg">เลือกคอร์สเรียน</a>
                     </div>
 
@@ -39,7 +50,7 @@
                 <div class="col-md-3">
                     <div class="home-info-box">
                         <img src="{{theme_url('images/skills.svg')}}">
-                        <h3 class="info-box-title">เรียนง่ายผ่าน ระบบออนไลน์</h3>
+                        <h3 class="info-box-title">เรียนง่ายผ่าน <br>ระบบออนไลน์</h3>
                         {{-- <p class="info-box-desc">like business analytics, graphic design, Python, and more</p> --}}
                     </div>
                 </div>
@@ -47,15 +58,15 @@
                 <div class="col-md-3">
                     <div class="home-info-box">
                         <img src="{{theme_url('images/career-goal.svg')}}">
-                        <h3 class="info-box-title">การันตีความสำเร็จ ทุกมาตรฐาน</h3>
+                        <h3 class="info-box-title">การันตีความสำเร็จ <br>ทุกมาตรฐาน</h3>
                         {{-- <p class="info-box-desc">in high-demand fields like IT, AI and cloud engineering</p> --}}
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <div class="home-info-box">
-                        <img src="{{theme_url('images/instructions.svg')}}">
-                        <h3 class="info-box-title">อาจารย์ผู้สอน เป็นที่ยอมรับในระดับสากล</h3>
+                        <img style="height: 92px;width: 79px" src="{{theme_url('images/318.png')}}">
+                        <h3 class="info-box-title">อาจารย์ผู้สอน <br>เป็นที่ยอมรับในระดับสากล</h3>
                         {{-- <p class="info-box-desc">Every course designed by expert instructor</p> --}}
                     </div>
                 </div>
@@ -63,7 +74,7 @@
                 <div class="col-md-3">
                     <div class="home-info-box">
                         <img src="{{theme_url('images/cartificate.svg')}}">
-                        <h3 class="info-box-title">ได้รับใบรับรอง เมื่อเรียนเสร็จ</h3>
+                        <h3 class="info-box-title">ได้รับใบรับรอง <br>เมื่อเรียนเสร็จ</h3>
                         {{-- <p class="info-box-desc">Get certified upon completing a course</p> --}}
                     </div>
                 </div>
@@ -144,10 +155,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header-wrap">
-                            <h3 class="section-title">{{__t('new_arrival')}}
+                            <span style="height: 20px">
+                                {{__t('new_arrival')}}
+                            </span>
+                            {{-- <h3 class="section-title">
+                                {{__t('new_arrival')}}
 
-                                <a href="{{route('courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_courses')}}</a>
-                            </h3>
+                            </h3> --}}
+                            <a style="margin-top: -7px;" href="{{route('courses')}}" class="btn btn-link float-right"><i class="la la-list"></i> {{__t('all_courses')}}</a>
+
                             {{-- <p class="section-subtitle">{{__t('new_arrival_desc')}}</p> --}}
                         </div>
                     </div>
@@ -266,9 +282,13 @@
 
                     <div class="home-cta-text-wrapper px-5 text-center">
                         <h4 style="color:#EB763D">หากท่านกำลังมีข้อสงสัย</h4>
-                        <p>เราได้รวบรวมคำถามจากผู้ที่เคยลงทะเบียนเรียน</p>
-                        <p>และผู้ที่สนใจท่านอื่นไว้แล้ว</p>
-                        <a href="{{route('create_course')}}" class="btn" style="background-color:#41474B;color:#FFFFFF">คำถามที่พบบ่อย</a>
+                        <br>
+                        <span>เราได้รวบรวมคำถามจากผู้ที่เคยลงทะเบียนเรียน</span>
+                        <br>
+                        <span>และผู้ที่สนใจท่านอื่นไว้แล้ว</span>
+                        <br>
+                        <br>
+                        <a href="{{route('create_course')}}" class="btn btn-theme-primary3 btn-lg"  >คำถามที่พบบ่อย</a>
 
                     </div>
 
@@ -278,10 +298,14 @@
 
                     <div class="home-cta-text-wrapper px-5 text-center">
                         <h4 style="color:#EB763D">ค้นหาคอร์สเรียนที่เหมาะสมกับท่าน</h4>
-                        <p>เรามีคอร์สเรียนมากมายให้ท่านได้เลือกสรรค์
-                        </p>
-                        <p>เพื่อพัฒนาคุณภาพขององค์กร</p>
-                        <a href="{{route('courses')}}" class="btn" style="background-color:#41474B;color:#FFFFFF">{{__t('find_new_courses')}}</a>
+                        <br>
+                        <span>เรามีคอร์สเรียนมากมายให้ท่านได้เลือกสรรค์
+                        </span>
+                        <br>
+                        <span>เพื่อพัฒนาคุณภาพขององค์กร</span>
+                        <br>
+                        <br>
+                        <a href="{{route('courses')}}" class="btn btn-theme-primary3 btn-lg" >{{__t('find_new_courses')}}</a>
                     </div>
 
                 </div>

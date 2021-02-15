@@ -35,7 +35,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
             </button> --}}
         </div>
 
-        <div class="course-card-contents">
+        <div class="course-card-contents" style="height: 250px">
             <a href="{{route('course', $course->slug)}}">
                 <h4 class="course-card-title-new mb-3">{{$course->title}}</h4>
                 <p class="course-card-short-info mb-2 d-flex justify-content-between">
@@ -56,7 +56,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                         </span>
                     @endif
                 </p>
-                @if($course->rating_count)
+                {{-- @if($course->rating_count)
                     <div class="course-card-ratings">
                         <div class="star-ratings-group d-flex">
                             {!! star_rating_generator($course->rating_value) !!}
@@ -71,7 +71,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                         <span class="star-ratings-point mx-2"><b>{{$course->rating_value}}</b></span>
                         <span class="text-muted star-ratings-count">({{$course->rating_count}})</span>
                     </div>
-                </div>
+                </div> --}}
                 <div class="text-right text-danger">
                     {!! $course->price_html(false, false) !!} 
                 </div>

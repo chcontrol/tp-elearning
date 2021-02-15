@@ -19,7 +19,7 @@
     @endphp
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-user"></i> </span>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-heart"></i> </span>
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6" >
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-star-half-alt"></i> </span>
@@ -64,16 +64,37 @@
             </div>
         </div>
 
+
+        <div class="col-lg-3 col-md-6">
+            <div class="dashboard-card mb-3 d-flex border p-3 bg-light" onClick="" >
+                <div class="card-icon mr-2">
+                    <span><i class="la la-calendar"></i> </span>
+                </div>
+
+                <div class="card-info">
+                    <div class="text-value">
+                        <h4>{{ $myReviewsCount }}</h4>
+                    </div>
+                    <div>
+                        <a href="{{route('calendar')}}">
+                            {{ __t('calendar') }}
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-
+{{-- 
             <div class="popular-courses-cards-wrap mt-3">
                 <div class="row">
                     @foreach($courses as $course)
-                        {!! course_card($course, 'col-md-4') !!}
+                        {!! course_card($course, 'col-md-3') !!}
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 

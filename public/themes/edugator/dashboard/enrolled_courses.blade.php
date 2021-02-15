@@ -6,8 +6,8 @@
         <table class="table table-bordered bg-white">
 
             <tr>
-                <th>{{__t('thumbnail')}}</th>
-                <th>{{__t('title')}}</th>
+                <th style="width: 10%">{{__t('thumbnail')}}</th>
+                <th style="width: 50%">{{__t('title')}}</th>
                 <th>{{__t('price')}}</th>
                 <th>#</th>
             </tr>
@@ -47,6 +47,10 @@
                     <td>
                         @if($course->status == 1)
                             <a href="{{route('course', $course->slug)}}" class="btn btn-sm btn-primary mt-2" target="_blank"><i class="la la-eye"></i> {{__t('view')}} </a>
+                        @endif
+
+                        @if($course->status == 1)
+                            <a href="{{route('course', $course->slug)}}" class="btn btn-sm btn-primary mt-2" target="_blank"><i class="la la-calendar"></i> {{__t('print_certificate')}} </a>
                         @endif
                     </td>
                 </tr>

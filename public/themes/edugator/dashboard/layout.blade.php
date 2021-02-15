@@ -2,7 +2,7 @@
 
 <div class="dashboard-wrap">
 
-    <div class="container-fluid py-4">
+    <div class="container py-4">
         <div class="row">
             <div class="col-2 dashboard-menu-col">
                 @include(theme('dashboard.sidebar-menu'))

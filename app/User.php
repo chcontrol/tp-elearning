@@ -141,7 +141,7 @@ where course_user.user_id = {$this->id} and reviews.status = 1";
         $textPhoto = strtoupper($first_char.$second_char);
 
         $bg_color = '#'.substr(md5($textPhoto), 0, 6);
-        $textPhoto = "<span class='profile-text-photo' style='background-color: {$bg_color}; color: #fff8e5'>{$textPhoto}</span>";
+        $textPhoto = "<span class='profile-text-photo' style='background-color: {$bg_color}; color: #fff8e5; margin-left:-3px'>{$textPhoto}</span>";
 
         return $textPhoto;
     }

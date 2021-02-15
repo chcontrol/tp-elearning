@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{theme_url('favicon.png')}}"/>
+    <link rel="shortcut icon" href="{{theme_url('Logo-Mega.jpg')}}"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -41,7 +41,7 @@
 
 <div class="main-navbar-wrap">
 
-    <div style="background-color: #EB763D;padding:10px"></div>
+    <div style="background-color: #EB763D;padding:5px"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <div class="container">
@@ -51,9 +51,9 @@
                 @endphp
 
                 @if($logoUrl)
-                    <img src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
+                    <img style="height: 40px" src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
                 @else
-                <img src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
                 @endif
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">

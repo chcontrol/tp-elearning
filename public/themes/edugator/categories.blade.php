@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="page-header-wrapper-grey bg-gray py-4">
+    <div class="page-header-wrapper bg-gray py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -22,7 +22,7 @@
                             <li class='breadcrumb-item active'>{{__t('topics')}}</li>
                         </ol>
                     </nav>
-                    <h1 class="mb-3">{{__t('topics')}}</h1>
+                    <h1 class="mb-3 font-header-bg-primary">{{__t('topics')}}</h1>
                 </div>
             </div>
         </div>

@@ -58,6 +58,7 @@ a.nav-btn.disabled:hover{
 .bg-light-sky{
     background-color: #EB763D !important;
     
+    
 }
 
 .bg-gray{
@@ -119,6 +120,16 @@ ul{
     border-color: #41474B;
 }
 .btn-theme-primary2:hover{
+    color: #fff !important;
+    background-color: #EB763D;
+    border-color: #EB763D;
+}
+.btn-theme-primary3{
+    color: #ffffff !important;
+    background-color: #41474B;
+    border-color: #41474B;
+}
+.btn-theme-primary3:hover{
     color: #fff !important;
     background-color: #EB763D;
     border-color: #EB763D;
@@ -359,11 +370,11 @@ Hero Section
     position: relative;
 }
 .hero-banner::before {
-    /* content: "";
-    background: #dddddd;
+    content: "";
+    background: #F5F5F5;
     height: 100%;
     left: 0;
-    opacity: 0.5; */
+    opacity: 0.2;
     position: absolute;
     top: 0;
     width: 100%;
@@ -1557,7 +1568,9 @@ span.quiz-progress-number.active {
 
 .page-header-wrapper::before {
      content: "";
-     background: #EB763D;
+     /* background: #EB763D; */
+     /* background: url("../../images/page-header-bg.svg") 50%/cover; */
+     background: #ffffff url(../../images/title_bg.jpg) no-repeat scroll center center / cover;
      height: 100%;
      left: 0;
      opacity: 1;
@@ -2117,4 +2130,9 @@ User Profile Page
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
+}
+
+
+.font-header-bg-primary{
+    color: #FFFFFF;
 }

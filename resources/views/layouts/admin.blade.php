@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="{{ theme_url('favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ theme_url('Logo-Mega.jpg') }}" />
 
     <!-- Teachify Version -->
     <meta name="generator" content="Teachify LMS v.{{ config('app.version') }}" />
@@ -41,11 +41,11 @@
 <body class="{{ get_option('enable_rtl') ? 'rtl' : '' }}">
 
 
-    <div style="background-color: #EB763D;padding:15px ;position: relative;z-index: 1;"></div>
+    <div style="background-color: #EB763D;padding:5px ;position: relative;z-index: 1;"></div>
 
     <nav class="navbar navbar-expand-lg navbar-light dashboard-top-nav">
 
-
+        <div class="container">
         <div class="dashboard-top-navbar-brand">
             <a class="navbar-brand" href="{{ route('home') }}">
                 @php
@@ -53,14 +53,16 @@
                 @endphp
 
                 @if ($logoUrl)
-                    <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
                 @else
                 {{-- <img src="{{ asset('assets/images/Logo-Mega.jpg') }}" alt="{{ get_option('site_title') }}" /> --}}
-                <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" />
+                {{-- <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" /> --}}
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
+
                 @endif
             </a>
         </div>
-
+    
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,7 +110,7 @@
             </ul>
 
         </div>
-
+    </div>
 
     </nav>
 
@@ -116,7 +118,7 @@
 
 
     <div class="dashboard-wrap">
-        <div class="container-fluid">
+        <div class="container">
 
             <div id="wrapper">
                 @include('admin.menu')

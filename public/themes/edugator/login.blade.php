@@ -12,7 +12,7 @@
                 <div class="card-body">
 
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-10">
 
                             @include('inc.flash_msg')
 
@@ -72,7 +72,7 @@
 
                         </div>
 
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
 
                             <div class="social-login-wrap mb-4 text-center">
                                 @if(get_option('social_login.facebook.enable'))
@@ -104,7 +104,7 @@
 
                             </div>
 
-                        </div>
+                        </div> --}}
 
                     </div>
 

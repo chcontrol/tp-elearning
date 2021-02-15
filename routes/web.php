@@ -18,12 +18,14 @@ use App\Http\Controllers\EventsController;
 
 
 Route::get('blog2', 'PostController@blog2')->name('blog2');
-Route::get('calendar',[FullCalendarController::class, 'index']);
+Route::get('calendar', 'FullCalendarController@index')->name('calendar');
+// Route::get('calendar',[FullCalendarController::class, 'index']);//************************* */
 Route::post('/booking/create', [FullCalendarController::class, 'create']);
 Route::post('/booking/update', [FullCalendarController::class, 'update']);
 Route::post('/booking/delete', [FullCalendarController::class, 'destroy']);
 
 Route::resource('events', 'EventsController',['only' => ['index', 'store', 'update', 'destroy']]);
+Route::get('/importExportView', [DemoController::class, 'importExportView']);
 
 
 Route::get('/importExportView', [DemoController::class, 'importExportView']);

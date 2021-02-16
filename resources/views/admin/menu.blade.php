@@ -29,17 +29,17 @@
 
             <li> <a href="{{route('admin_courses')}}"><i class="la la-chalkboard"></i> {{__a('courses')}}</a>  </li>
 
-            <li>
+            {{-- <li>
                 <a href="{{route('plugins')}}" class="{{request()->is('admin/plugins*') ? 'active' : ''}}" >
                     <i class="la la-plug"></i> {{__a('plugins')}}
                 </a>
-            </li>
+            </li> --}}
 
-            <li>
+            {{-- <li>
                 <a href="{{route('themes')}}" class="{{request()->is('admin/themes*') ? 'active' : ''}}">
                     <i class="la la-brush"></i> {{__a('themes')}}
                 </a>
-            </li>
+            </li> --}}
 
             <li>
                 <a href="#"><i class="la la-tools fa-fw"></i> {{__a('settings')}}<span class="la arrow"></span></a>
@@ -64,7 +64,7 @@
             </li>
 
             <li> <a href="{{route('payments')}}"><i class="la la-file-invoice-dollar"></i> {{__a('payments')}}</a>  </li>
-            <li> <a href="{{route('withdraws')}}"><i class="la la-wallet"></i> {{__a('withdraws')}}</a>  </li>
+            {{-- <li> <a href="{{route('withdraws')}}"><i class="la la-wallet"></i> {{__a('withdraws')}}</a>  </li> --}}
 
             <li> <a href="{{ route('users') }}"><i class="la la-users"></i> {{__a('users')}}</a>  </li>
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{theme_url('Logo-Mega.jpg')}}"/>
+    <link rel="shortcut icon" href="{{theme_url('Logo-Mega.png')}}"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -53,7 +53,7 @@
                 @if($logoUrl)
                     <img style="height: 40px" src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
                 @else
-                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.png')}}" alt="{{get_option('site_title')}}" />
                 @endif
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">

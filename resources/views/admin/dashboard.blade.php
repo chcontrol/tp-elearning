@@ -109,7 +109,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{{$assignmentCount}}</h4></div>
-                    <div>{{__t('assignments')}}</div>
+                    <div style="font-size: 14px">{{__t('assignments')}}</div>
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        {{-- <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-star-half-alt"></i> </span>
@@ -151,7 +151,7 @@
                     <div>{{__t('reviews')}}</div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
@@ -175,7 +175,7 @@
 
                 <div class="card-info">
                     <div class="text-value"><h4>{!! price_format($withdrawsTotal) !!}</h4></div>
-                    <div>{{__t('withdraws_total')}}</div>
+                    <div style="font-size: 14px">{{__t('withdraws_total')}}</div>
                 </div>
             </div>
         </div>

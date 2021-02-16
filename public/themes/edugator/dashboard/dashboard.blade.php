@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        {{-- <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-heart"></i> </span>
@@ -62,7 +62,7 @@
                     <div>{{ __t('reviews') }}</div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
         <div class="col-lg-3 col-md-6">
@@ -76,10 +76,7 @@
                         <h4>{{ $myReviewsCount }}</h4>
                     </div>
                     <div>
-                        <a href="{{route('calendar')}}">
                             {{ __t('calendar') }}
-                        </a>
-                        
                     </div>
                 </div>
             </div>
@@ -162,25 +159,19 @@
 @endsection
 
 @section('page-js')
-
     @if ($chartData)
         <script src="{{ asset('assets/plugins/chartjs/Chart.min.js') }}"></script>
-
         <script>
             var ctx = document.getElementById("ChartArea").getContext('2d');
             var ChartArea = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: {
-                        !!json_encode(array_keys($chartData)) !!
-                    },
+                    labels: {!! json_encode(array_keys($chartData)) !!},
                     datasets: [{
                         label: 'Earning ',
                         backgroundColor: '#216094',
                         borderColor: '#216094',
-                        data: {
-                            !!json_encode(array_values($chartData)) !!
-                        },
+                        data: {!! json_encode(array_values($chartData)) !!},
                         borderWidth: 2,
                         fill: false,
                         lineTension: 0,

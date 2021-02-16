@@ -459,7 +459,7 @@ Home popular courses
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; /* number of lines to show */
     line-height: 22px;        /* fallback */
-    height: 28px;       /* fallback */
+    height: 40px;       /* fallback */
 }
 .course-card-info-wrap{
     min-height: 80px;

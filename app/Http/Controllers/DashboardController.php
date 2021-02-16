@@ -66,6 +66,9 @@ class DashboardController extends Controller
             }
         }
 
+        //  print_r($chartData);
+
+
         $courses = Course::publish()->orderBy('created_at', 'desc')->take(12)->get();
 
 

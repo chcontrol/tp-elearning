@@ -12,7 +12,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
     <div class="course-card mb-5">
 
         <div class="course-card-img-wrap">
-            <div class="dropdown" style="text-align: right;z-index:1;margin-right: 2.5em;">
+            {{-- <div class="dropdown" style="text-align: right;z-index:1;margin-right: 2.5em;">
                 
                 <button style="opacity: 0.2;position: absolute;z-index:1;" type="button" class="btn btn-secondary  btn-circle  " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                ...
@@ -20,7 +20,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">พิมพ์ใบรับรอง</a>
                 </div>
-              </div>
+              </div> --}}
             <a href="{{route('course', $course->slug)}}">
                 
                 <img src="{{$course->thumbnail_url}}"  style="min-height: 137px; height:137px" />
@@ -51,7 +51,7 @@ $gridClass = $grid_class ? $grid_class : 'col-md-3';
                         <a style="font-size: 0.8rem;color: #9BA3B5 " href="{{route('profile', $course->user_id)}}">{{$course->author->name}}</a>
                     </span>
                     @if($course->category)
-                        <span>
+                        <span style="text-align: -webkit-right; height : 40px">
                             <i class="la la-folder"></i> in <a href="{{route('category_view', $course->category->slug)}}">{{$course->category->category_name}}</a>
                         </span>
                     @endif

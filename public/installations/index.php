@@ -25,7 +25,7 @@ if (file_exists(custom_base_path().'/.env')){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="./Logo-Mega.jpg"/>
+    <link rel="shortcut icon" href="./Logo-Mega.png"/>
 
     <title> Teachify LMS - Installation Wizard</title>
 

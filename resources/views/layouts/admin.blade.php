@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="{{ theme_url('Logo-Mega.jpg') }}" />
+    <link rel="shortcut icon" href="{{ theme_url('Logo-Mega.png') }}" />
 
     <!-- Teachify Version -->
     <meta name="generator" content="Teachify LMS v.{{ config('app.version') }}" />
@@ -53,11 +53,11 @@
                 @endphp
 
                 @if ($logoUrl)
-                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.png')}}" alt="{{get_option('site_title')}}" />
                 @else
-                {{-- <img src="{{ asset('assets/images/Logo-Mega.jpg') }}" alt="{{ get_option('site_title') }}" /> --}}
+                {{-- <img src="{{ asset('assets/images/Logo-Mega.png') }}" alt="{{ get_option('site_title') }}" /> --}}
                 {{-- <img src="{{ media_file_uri(get_option('site_logo')) }}" alt="{{ get_option('site_title') }}" /> --}}
-                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.jpg')}}" alt="{{get_option('site_title')}}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.png')}}" alt="{{get_option('site_title')}}" />
 
                 @endif
             </a>
@@ -143,10 +143,10 @@
                     <div class="admin-footer">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <p class="m-0"><a href="https://themeqx.com/product/teachify-lms"
                                             target="_blank">Teachify LMS</a> Version {{ config('app.version') }}</p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

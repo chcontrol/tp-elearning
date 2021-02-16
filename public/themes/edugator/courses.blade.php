@@ -130,7 +130,7 @@
                                 </div>
                             </div>
 
-                            <div class="course-filter-form-group box-shadow p-3 mb-4">
+                            <div class="course-filter-form-group box-shadow p-3 mb-4 d-none">
                                 <div class="form-group">
                                     <h4 class="mb-3">{{__t('ratings')}}</h4>
                                     <div class="filter-form-by-rating-field-wrap">
@@ -223,8 +223,8 @@
 
                             <div class="form-group">
                                 <select class="form-control mr-2" name="sort">
-                                    <option value="relevance" {{selected('relevance', request('sort'))}}>Most Relevant</option>
-                                    <option value="most-reviewed" {{selected('most-reviewed', request('sort'))}}>Most Reviewed</option>
+                                    {{-- <option value="relevance" {{selected('relevance', request('sort'))}}>Most Relevant</option>
+                                    <option value="most-reviewed" {{selected('most-reviewed', request('sort'))}}>Most Reviewed</option> --}}
                                     <option value="highest-rated" {{selected('highest-rated', request('sort'))}}>Highest Rated</option>
                                     <option value="newest" {{selected('newest', request('sort'))}}>Newest</option>
                                     <option value="price-low-to-high" {{selected('price-low-to-high', request('sort'))}}>Lowest Price</option>

@@ -163,22 +163,29 @@
                                                         <input type="hidden" name="course_id" value="{{ $course->id }}">
 
                                                         <div class="enroll-box-btn-group mt-3">
-
-                                                            <?php $in_cart = cart($course->id); ?>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <?php $in_cart = cart($course->id); ?>
                                                             <button type="button"
                                                                 class="btn btn-lg btn-theme-primary btn-block mb-3 add-to-cart-btn"
                                                                 data-course-id="{{ $course->id }}" name="cart_btn"
                                                                 value="add_to_cart"
                                                                 {{ $in_cart ? 'disabled="disabled"' : '' }}>
                                                                 @if ($in_cart)
-                                                                    <i class='la la-check-circle'></i> Added to cart
+                                                                    <i class='la la-check-circle'></i> หยิบใส่ตะกร้า
                                                                 @else
                                                                     <i class="la la-shopping-cart"></i> Add to cart
                                                                 @endif
                                                             </button>
-                                                            <button type="submit"
+                                                                </div>
+                                                                <div   class="col">
+                                                                    <button type="submit"
                                                                 class="btn btn-lg btn-outline-dark btn-block"
-                                                                name="cart_btn" value="buy_now">Buy now</button>
+                                                                name="cart_btn" value="buy_now">ซื้อทันที</button>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
                                                         </div>
                                                     </form>
 

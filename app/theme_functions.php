@@ -13,7 +13,7 @@ function dashboard_menu(){
         $pendingDiscusionBadge = '';
         $pendingDiscussionCount = $user->instructor_discussions->where('replied', 0)->count();
         if ($pendingDiscussionCount){
-            $pendingDiscusionBadge = "<span class='badge badge-warning float-right'> {$pendingDiscussionCount} </span>";
+            $pendingDiscusionBadge = "<span style='margin-right:20px' class='badge badge-warning float-right'> {$pendingDiscussionCount} </span>";
         }
 
         $menu = apply_filters('dashboard_menu_for_instructor', [
@@ -27,21 +27,21 @@ function dashboard_menu(){
                 'icon' => '<i class="la la-graduation-cap"></i>',
                 'is_active' => request()->is('dashboard/my-courses'),
             ],
-            'earning' => [
-                'name' => __t('earnings'),
-                'icon' => '<i class="la la-comment-dollar"></i>',
-                'is_active' => request()->is('dashboard/earning*')
-            ],
-            'withdraw' => [
-                'name' => __t('withdraw'),
-                'icon' => '<i class="la la-wallet"></i>',
-                'is_active' => request()->is('dashboard/withdraw*'),
-            ],
-            'my_courses_reviews' => [
-                'name' => __t('my_courses_reviews'),
-                'icon' => '<i class="la la-star"></i>',
-                'is_active' => request()->is('dashboard/my-courses-reviews*'),
-            ],
+            // 'earning' => [
+            //     'name' => __t('earnings'),
+            //     'icon' => '<i class="la la-comment-dollar"></i>',
+            //     'is_active' => request()->is('dashboard/earning*')
+            // ],
+            // 'withdraw' => [
+            //     'name' => __t('withdraw'),
+            //     'icon' => '<i class="la la-wallet"></i>',
+            //     'is_active' => request()->is('dashboard/withdraw*'),
+            // ],
+            // 'my_courses_reviews' => [
+            //     'name' => __t('my_courses_reviews'),
+            //     'icon' => '<i class="la la-star"></i>',
+            //     'is_active' => request()->is('dashboard/my-courses-reviews*'),
+            // ],
             'courses_has_quiz' => [
                 'name' => __t('quiz_attempts'),
                 'icon' => '<i class="la la-check-double"></i>',
@@ -67,16 +67,16 @@ function dashboard_menu(){
             'icon' => '<i class="la la-pencil-square-o"></i>',
             'is_active' => request()->is('dashboard/enrolled-courses*'),
         ],
-        'wishlist' => [
-            'name' => __t('wishlist'),
-            'icon' => '<i class="la la-heart-o"></i>',
-            'is_active' => request()->is('dashboard/wishlist*'),
-        ],
-        'reviews_i_wrote' => [
-            'name' => __t('reviews'),
-            'icon' => '<i class="la la-star-half-alt"></i>',
-            'is_active' => request()->is('dashboard/reviews-i-wrote*'),
-        ],
+        // 'wishlist' => [
+        //     'name' => __t('wishlist'),
+        //     'icon' => '<i class="la la-heart-o"></i>',
+        //     'is_active' => request()->is('dashboard/wishlist*'),
+        // ],
+        // 'reviews_i_wrote' => [
+        //     'name' => __t('reviews'),
+        //     'icon' => '<i class="la la-star-half-alt"></i>',
+        //     'is_active' => request()->is('dashboard/reviews-i-wrote*'),
+        // ],
         'my_quiz_attempts' => [
             'name' => __t('my_quiz_attempts'),
             'icon' => '<i class="la la-question-circle-o"></i>',
@@ -93,7 +93,7 @@ function dashboard_menu(){
             'is_active' => request()->is('dashboard/settings*'),
         ],
         'calendar' => [
-            'name' => __t('calendar'),
+            'name' => __t('calendar_sidebar'),
             'icon' => '<i class="la la-calendar"></i>',
             'is_active' => request()->is('dashboard/calendar*'),
         ],

@@ -747,7 +747,17 @@ class CourseController extends Controller
     {
         $title = __t('รายงานผลคะแนนนักเรียน');
         $slug = $slug;
-        return view(theme('dashboard.students_list'), compact('title', 'slug'));
+        
+
+        $data_studentlist = DB::table('attempts')
+        ->where('courses.slug', '=', $slug)
+        ->join('users', 'users.id', '=', 'attempts.user_id')
+        ->join('courses', 'courses.id', '=', 'attempts.course_id')
+        ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
+        ->get();
+
+
+        return view(theme('dashboard.students_list'), compact('title', 'slug','data_studentlist'));
         // return $dataTable->render('users');
     }
 

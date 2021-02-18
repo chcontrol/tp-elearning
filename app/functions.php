@@ -1165,7 +1165,7 @@ function course_levels($level = null){
         1 => __t('beginner'),
         2 => __t('intermediate'),
         3 => __t('expert'),
-        0 => __t('all_level'),
+        // 0 => __t('all_level'),
     ];
 
     if ($level !== null){

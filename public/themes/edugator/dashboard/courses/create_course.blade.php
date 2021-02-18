@@ -43,9 +43,12 @@
 
                         <div class="form-group">
                             <p for="level" class="mr-4">{{__t('course_level')}}</p>
-                            <select name="level" class="form-control">
+                            <select name="level" class="form-control" required>
+                                <option value="" selected="selected" >Select Level</option>
+
                                 @foreach(course_levels() as $key => $level)
-                                    <option value="{{$key}}" {{selected(1, $key)}}>{{$level}}</option>
+                                {{-- {{selected(1, $key)}} --}}
+                                    <option value="{{$key}}"  >{{$level}}</option>
                                 @endforeach
                             </select>
                         </div>

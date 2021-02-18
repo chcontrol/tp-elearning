@@ -29,17 +29,11 @@
     <div class="container my-4">
 
         <div class="row">
-            <div class="col-md-11 offset-md-1">
-
-
+            <div class="col-md-12">
                 <div class="course-details-wrap">
-
-
                     <div class="course-intro-stats-wrapper mb-4">
-
                         <div class="row">
                             <div class="col-md-6">
-
                                 @if ($course->video_info())
                                     @include(theme('video-player'), ['model' => $course, 'video_caption' => __t('preview')])
                                 @else

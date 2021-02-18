@@ -761,6 +761,15 @@ class CourseController extends Controller
         // return $dataTable->render('users');
     }
 
+    public function certificate($slug)
+    {
+        $title = __t('รายงานผลคะแนนนักเรียน');
+        $slug = $slug;
+        return redirect('/plugin/certificate/'.$slug.'/download');
+    }
+
+    
+
     public function studentsList2(UsersDataTable $dataTable)
     {
         $title = __t('my_courses_reviews');

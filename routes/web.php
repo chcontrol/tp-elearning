@@ -114,6 +114,7 @@ Route::group(['prefix' => 'login'], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('courses/{slug}/assignment/{assignment_id}', 'CourseController@assignmentSubmitting');
     Route::get('content_complete/{content_id}', 'CourseController@contentComplete')->name('content_complete');
+    Route::get('certificate/{content_id}', 'CourseController@certificate')->name('certificate');
     Route::post('courses-complete/{course_id}', 'CourseController@complete')->name('course_complete');
 
     Route::group(['prefix' => 'checkout'], function () {

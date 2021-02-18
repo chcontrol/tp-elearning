@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '3c64c94fab20970f5289848a38bf7721cef0f4e5',
+    'reference' => '9107243aa4747ca328ad3aa279ea2a99a54f3fe8',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -490,7 +490,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '3c64c94fab20970f5289848a38bf7721cef0f4e5',
+      'reference' => '9107243aa4747ca328ad3aa279ea2a99a54f3fe8',
     ),
     'laravel/socialite' => 
     array (
@@ -1180,12 +1180,12 @@ private static $installed = array (
     ),
     'symfony/finder' => 
     array (
-      'pretty_version' => 'v5.2.2',
-      'version' => '5.2.2.0',
+      'pretty_version' => 'v5.2.3',
+      'version' => '5.2.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '196f45723b5e618bf0e23b97e96d11652696ea9e',
+      'reference' => '4adc8d172d602008c204c2e16956f99257248e03',
     ),
     'symfony/http-client-contracts' => 
     array (

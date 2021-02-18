@@ -225,7 +225,7 @@
                                 <select class="form-control mr-2" name="sort">
                                     {{-- <option value="relevance" {{selected('relevance', request('sort'))}}>Most Relevant</option>
                                     <option value="most-reviewed" {{selected('most-reviewed', request('sort'))}}>Most Reviewed</option> --}}
-                                    <option value="highest-rated" {{selected('highest-rated', request('sort'))}}>Highest Rated</option>
+                                    {{-- <option value="highest-rated" {{selected('highest-rated', request('sort'))}}>Highest Rated</option> --}}
                                     <option value="newest" {{selected('newest', request('sort'))}}>Newest</option>
                                     <option value="price-low-to-high" {{selected('price-low-to-high', request('sort'))}}>Lowest Price</option>
                                     <option value="price-high-to-low" {{selected('price-high-to-low', request('sort'))}}>Highest Price</option>

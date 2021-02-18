@@ -26,21 +26,18 @@
                                         {{ Form::text('title', old('title'), ['class' => 'form-control']) }}
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        {{ Form::label('title', 'วิชาที่สอน*') }}
-                                        <input type="text" class="form-control" />
-                                        {{--
-                                        {{ Form::text('title', old('title'), ['class' => 'form-control']) }}
-                                        --}}
+                                        {{ Form::label('course_id', 'วิชาที่สอน*') }}
+                                        {{ Form::text('course_id', old('course_id'), ['class' => 'form-control']) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        {{ Form::label('title', 'รายละเอียด*') }}
-                                        <input type="text" class="form-control" />
+                                        {{ Form::label('discription', 'รายละเอียด*') }}
+                                        {{ Form::text('discription', old('discription'), ['class' => 'form-control']) }}
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        {{ Form::label('title', 'Link Zoom*') }}
-                                        <input type="text" class="form-control" />
+                                        {{ Form::label('ref_link', 'Link Zoom*') }}
+                                        {{ Form::text('ref_link', old('ref_link'), ['class' => 'form-control']) }}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -68,6 +65,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        {{ Form::label('note', 'หมายเหตุ*') }}
+                                        {{ Form::text('note', old('note'), ['class' => 'form-control']) }}
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -96,11 +100,9 @@
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    {{ Form::label('_title', 'วิชาที่สอน*') }}
-                                    <input type="text" class="form-control" />
-                                    {{--
-                                    {{ Form::text('title', old('_title'), ['class' => 'form-control']) }}
-                                    --}}
+                                    {{ Form::label('_course_id', 'วิชาที่สอน*') }}
+                                    {{ Form::text('_course_id', old('_course_id'), ['class' => 'form-control']) }}
+
                                 </div>
                             </div>
 
@@ -197,6 +199,7 @@
                     $('#modal-event #delete').attr('data-id', event.id);
                     $('#modal-event .btn-update').attr('data-id', event.id);
                     $('#modal-event #_title').val(event.title);
+                    $('#modal-event #_course_id').val(event.course_id);
                     $('#modal-event #_date_start').val(date_start);
                     $('#modal-event #_time_start').val(time_start);
                     $('#modal-event #_date_end').val(date_end);
@@ -262,22 +265,32 @@
         $(document).on('click', '.btn-update', function() {
             // Creamos un objeto de tipo FormData de Jquery para enviar los valores recuperados del evento
 
-            var route_update = $(this).attr('data-href') + '/' + $(this).attr(
-                'data-id'); //recuperamos la ruta & id del evento
+            var route_update = $(this).attr('data-href') + '/' + $(this).attr('data-id'); //recuperamos la ruta & id del evento
             var data = {
                 'date_start': $('#_date_start').val(),
                 'title': $('#_title').val(),
+
+                'discription': $('#_discription').val(),
+                
                 'time_start': $('#_time_start').val(),
                 'date_end': $('#_date_end').val(),
                 'color': $('#_color').val(),
-                '_method': 'PATCH'
+
+                'ref_link': $('#_ref_link').val(),
+                'course_id': $('#_course_id').val(),
+                'note': $('#_note').val(),
+
+                '_method': 'PATCH',
+                _token: '{{ csrf_token() }}'
             };
+
+            alert(JSON.stringify(data))
             $.ajax({
                 data: data,
                 type: 'PATCH',
-                data: {
-                    _token: '{{ csrf_token() }}'
-                },
+                // data: {
+                //     _token: '{{ csrf_token() }}'
+                // },
                 url: route_update,
                 success: function(result) {
                     $('#modal-event').modal('hide');

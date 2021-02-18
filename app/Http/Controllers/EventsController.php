@@ -14,7 +14,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $data = Event::get(['id', 'title', 'start', 'end', 'color']);
+        $data = Event::get(['id', 'title', 'discription', 'start', 'end', 'color', 'ref_link', 'course_id', 'note']);
 
         return Response()->json($data);
     }
@@ -39,6 +39,7 @@ class EventsController extends Controller
     {
         $event = new Event();
         $event->title = $request->title;
+        $event->course_id = $request->course_id;
         $event->start = $request->date_start . ' ' . $request->time_start;
         $event->end = $request->date_end;
         $event->color = $request->color;
@@ -84,13 +85,13 @@ class EventsController extends Controller
         $event->end = $request->date_end;
         $event->color = $request->color;
 
-        if($event->save())
+        if ($event->save())
             return response()->json([
                 'status'    =>  201,
                 'message'   =>  'บันทึกการแก้ไขสำเร็จ'
             ]);
         return response()->json([
-            'status'    =>  503, 
+            'status'    =>  503,
             'message'   =>  'SE PRODUJO UN ERROR AL ACTUALIZAR EVENTO'
         ]);
     }
@@ -105,7 +106,7 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
 
-        if($event == null)
+        if ($event == null)
             return Response()->json([
                 'message'   =>  'ERROR AL ELIMINAR EVENTO'
             ]);
@@ -115,6 +116,5 @@ class EventsController extends Controller
         return Response()->json([
             'message'   =>  'ลบการนัดสอบสำเร็จ'
         ]);
-
     }
 }

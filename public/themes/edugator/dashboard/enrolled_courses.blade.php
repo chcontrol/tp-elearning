@@ -46,7 +46,7 @@
 
                     <td>
                         @if($course->status == 1)
-                            <a href="{{route('course', $course->slug)}}" class="btn btn-sm btn-primary-original mt-2" target="_blank"><i class="la la-eye"></i> {{__t('view')}} </a>
+                            <a href="{{route('course', $course->slug)}}" class="btn btn-sm btn-info mt-2" target="_blank"><i class="la la-eye"></i> {{__t('view')}} </a>
                         @endif
 
                         @if($course->status == 1)

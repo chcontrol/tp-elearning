@@ -12,7 +12,7 @@ return [
     'categories'                    => 'ประเภท',
     'all_categories'                => 'All Categories',
     'add_to_cart'                   => 'ลงทะเบียน',
-    'in_cart'                       => 'In Cart',
+    'in_cart'                       => 'อยู่ในตะกร้า',
     'courses'                       => 'หลักสูตร',
     'students'                      => 'นักเรียน',
     'reviews'                       => 'รีวิว',
@@ -240,7 +240,7 @@ return [
     'minutes'                       => 'Minutes',
     'review_attempt_info_text'      => 'Review this attempt and add necessary score if require',
     'edit'                          => 'แก้ไข',
-    'students_progress_report'      => 'Students Progress Report',
+    'students_progress_report'      => 'รายงานความก้าวหน้า',
 
     //END Dashboard
 
@@ -362,6 +362,6 @@ return [
     'change_password'          => 'เปลี่ยนรหัสผ่าน',
     'how_upload_video'          => 'เลือกประเภทวิดีโอที่คุณต้องการ  (.mp4, YouTube, Vimeo อื่นๆ) ',
     'calendar'                  => 'กิจกรรม',
-    'calendar_sidebar'                  => 'รายงานความก้าวหน้า',
+    'calendar_sidebar'          => 'กิจกรรม',
     'print_certificate'         => 'พิมพ์ใบรับรอง'
 ];

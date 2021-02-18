@@ -65,7 +65,7 @@
 
                 <div class="col-md-3">
                     <div class="home-info-box">
-                        <img style="height: 92px;width: 79px" src="{{theme_url('images/318.png')}}">
+                        <img style="height: 80px;width: 80px" src="{{theme_url('images/318.png')}}">
                         <h3 class="info-box-title">อาจารย์ผู้สอน <br>เป็นที่ยอมรับในระดับสากล</h3>
                         {{-- <p class="info-box-desc">Every course designed by expert instructor</p> --}}
                     </div>

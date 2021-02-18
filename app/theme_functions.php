@@ -92,10 +92,15 @@ function dashboard_menu(){
             'icon' => '<i class="la la-tools"></i>',
             'is_active' => request()->is('dashboard/settings*'),
         ],
+        'dashboard' => [
+            'name' => __t('students_progress_report'),
+            'icon' => '<i class="la la-calendar"></i>',
+            'is_active' => request()->is('dashboard/dashboard*'),
+        ],
         'calendar' => [
             'name' => __t('calendar_sidebar'),
             'icon' => '<i class="la la-calendar"></i>',
-            'is_active' => request()->is('dashboard/calendar*'),
+            'is_active' => request()->is('dashboard/dashboard*'),
         ],
         
     ]);

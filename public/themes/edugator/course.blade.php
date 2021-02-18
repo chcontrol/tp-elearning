@@ -174,13 +174,12 @@
                                                                 @if ($in_cart)
                                                                     <i class='la la-check-circle'></i> หยิบใส่ตะกร้า
                                                                 @else
-                                                                    <i class="la la-shopping-cart"></i> Add to cart
+                                                                    <i class="la la-shopping-cart"></i> หยิบใส่ตะกร้า
                                                                 @endif
                                                             </button>
                                                                 </div>
                                                                 <div   class="col">
-                                                                    <button type="submit"
-                                                                class="btn btn-lg btn-outline-dark btn-block"
+                                                                    <button type="submit" style="padding:.88rem 1.1rem" class="btn btn-lg mb-3 btn-outline-dark btn-block"
                                                                 name="cart_btn" value="buy_now">ซื้อทันที</button>
                                                                 </div>
                                                             </div>

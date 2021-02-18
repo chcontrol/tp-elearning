@@ -3,7 +3,10 @@
 @section('content')
 
     @php
-    $courses = $auth_user->wishlist()->publish()->get();
+    $courses = $auth_user
+        ->wishlist()
+        ->publish()
+        ->get();
     @endphp
 
 
@@ -75,8 +78,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-dafault"
-                                data-dismiss="modal">ยกเลิก</button>
+                            <button type="button" class="btn btn-dafault" data-dismiss="modal">ยกเลิก</button>
                             {!! Form::submit('ยืนยัน', ['class' => 'btn btn-success']) !!}
                         </div>
                     </div>
@@ -105,13 +107,21 @@
 
                                 </div>
                             </div>
-
-
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_discription', 'รายละเอียด*') }}
+                                    {{ Form::text('_discription', old('_discription'), ['class' => 'form-control']) }}
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_ref_link', 'Link Zoom*') }}
+                                    {{ Form::text('_ref_link', old('_ref_link'), ['class' => 'form-control']) }}
+                                </div>
+                            </div>
                             <div class="form-group">
                                 {{ Form::label('_date_start', 'วันที่เริ่ม') }}
                                 {{ Form::text('_date_start', old('_date_start'), ['class' => 'form-control', 'readonly']) }}
                             </div>
-
+                            
                             <div class="form-group">
                                 {{ Form::label('_time_start', 'เวลาที่เริ่ม') }}
                                 {{ Form::text('_time_start', old('_time_start'), ['class' => 'form-control']) }}
@@ -200,6 +210,8 @@
                     $('#modal-event .btn-update').attr('data-id', event.id);
                     $('#modal-event #_title').val(event.title);
                     $('#modal-event #_course_id').val(event.course_id);
+                    $('#modal-event #_discription').val(event.discription);
+                    $('#modal-event #_ref_link').val(event.ref_link);
                     $('#modal-event #_date_start').val(date_start);
                     $('#modal-event #_time_start').val(time_start);
                     $('#modal-event #_date_end').val(date_end);
@@ -265,13 +277,14 @@
         $(document).on('click', '.btn-update', function() {
             // Creamos un objeto de tipo FormData de Jquery para enviar los valores recuperados del evento
 
-            var route_update = $(this).attr('data-href') + '/' + $(this).attr('data-id'); //recuperamos la ruta & id del evento
+            var route_update = $(this).attr('data-href') + '/' + $(this).attr(
+            'data-id'); //recuperamos la ruta & id del evento
             var data = {
                 'date_start': $('#_date_start').val(),
                 'title': $('#_title').val(),
 
                 'discription': $('#_discription').val(),
-                
+
                 'time_start': $('#_time_start').val(),
                 'date_end': $('#_date_end').val(),
                 'color': $('#_color').val(),

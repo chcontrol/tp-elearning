@@ -40,8 +40,11 @@ class EventsController extends Controller
         $event = new Event();
         $event->title = $request->title;
         $event->course_id = $request->course_id;
+        $event->discription = $request->discription;
         $event->start = $request->date_start . ' ' . $request->time_start;
         $event->end = $request->date_end;
+        $event->ref_link = $request->ref_link;
+        $event->note = '1';
         $event->color = $request->color;
         $event->save();
 
@@ -79,10 +82,16 @@ class EventsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $event = Event::find($id);
         $event->title = $request->title;
+        $event->course_id = $request->course_id;
+        $event->discription = $request->discription;
         $event->start = $request->date_start . ' ' . $request->time_start;
         $event->end = $request->date_end;
+        $event->ref_link = $request->ref_link;
+        $event->note = '0';
         $event->color = $request->color;
 
         if ($event->save())

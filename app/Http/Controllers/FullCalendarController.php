@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use Redirect,Response;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class FullCalendarController extends Controller
 {
     public function index()
 	{
+		$user = Auth::user();
+
 		if(request()->ajax())
 		{
 			$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');

@@ -1,12 +1,51 @@
 @extends(theme('dashboard.layout'))
 
+
+
+
 @section('content')
+
+    @php
+    $user_id = $auth_user->id;
+
+    $enrolledCount = \App\Enroll::whereUserId($user_id)
+        ->whereStatus('success')
+        ->count();
+
+    $user = Auth::user();
+    // print_r($user);
+    echo '<input type="text" id="isInstructor" value="' . $user->isInstructor . '" hidden="hidden" />';
+
+    $wishListed = \Illuminate\Support\Facades\DB::table('wishlists')
+        ->whereUserId($user_id)
+        ->count();
+
+    $myReviewsCount = \App\Review::whereUserId($user_id)->count();
+    $purchases = $auth_user
+        ->purchases()
+        ->take(10)
+        ->get();
+    @endphp
 
     @php
     $courses = $auth_user
         ->wishlist()
         ->publish()
         ->get();
+
+    // $enrolledCount = \App\Enroll::whereUserId($user_id)
+    //     ->whereStatus('success')
+    //     ->count();
+    // $wishListed = \Illuminate\Support\Facades\DB::table('wishlists')
+    //     ->whereUserId($user_id)
+    //     ->count();
+
+    // $myReviewsCount = \App\Review::whereUserId($user_id)->count();
+    // $purchases = $auth_user
+    //     ->purchases()
+    //     ->take(10)
+    //     ->get();
+
     @endphp
 
 
@@ -15,7 +54,9 @@
     <div class="container">
         <div class="container">
             {{ Form::open(['route' => 'events.store', 'method' => 'post', 'role' => 'form']) }}
-            <div id="responsive-modal" class="modal " tabindex="-1" data-backdrop="static">
+            <div class="modal " id="responsive-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                {{-- <div id="responsive-modal" class="modal " tabindex="-1" data-backdrop="static"> --}}
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -79,7 +120,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-dafault" data-dismiss="modal">ยกเลิก</button>
-                            {!! Form::submit('ยืนยัน', ['class' => 'btn btn-success']) !!}
+                            {!! Form::submit('ยืนยัน', ['class' => 'btn btn-success save']) !!}
                         </div>
                     </div>
                 </div>
@@ -96,7 +137,7 @@
                         <div class="modal-body">
 
                             <div class="row">
-                                <div class="form-group col-sm-6">
+                                <div class="form-group col-sm-6 isInstructor">
                                     {{ Form::label('_title', 'หัวข้อที่สอน') }}
                                     {{ Form::text('_title', old('_title'), ['class' => 'form-control']) }}
                                 </div>
@@ -117,41 +158,47 @@
                                     {{ Form::text('_ref_link', old('_ref_link'), ['class' => 'form-control']) }}
                                 </div>
                             </div>
-                            <div class="form-group">
-                                {{ Form::label('_date_start', 'วันที่เริ่ม') }}
-                                {{ Form::text('_date_start', old('_date_start'), ['class' => 'form-control', 'readonly']) }}
-                            </div>
-                            
-                            <div class="form-group">
-                                {{ Form::label('_time_start', 'เวลาที่เริ่ม') }}
-                                {{ Form::text('_time_start', old('_time_start'), ['class' => 'form-control']) }}
-                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_date_start', 'วันที่เริ่ม') }}
+                                    {{ Form::text('_date_start', old('_date_start'), ['class' => 'form-control', 'readonly']) }}
+                                </div>
 
-                            <div class="form-group">
-                                {{ Form::label('_date_end', 'วันเวลาที่เลิก') }}
-                                {{ Form::text('_date_end', old('_date_end'), ['class' => 'form-control']) }}
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_time_start', 'เวลาที่เริ่ม') }}
+                                    {{ Form::text('_time_start', old('_time_start'), ['class' => 'form-control']) }}
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_date_end', 'วันเวลาที่เลิก') }}
+                                    {{ Form::text('_date_end', old('_date_end'), ['class' => 'form-control']) }}
+                                </div>
 
-                            <div class="form-group">
-                                {{ Form::label('_color', 'สี') }}
-                                <div class="input-group colorpicker">
-                                    {{ Form::text('_color', old('_color'), ['class' => 'form-control']) }}
-                                    <span class="input-group-addon">
-                                        <i></i>
-                                    </span>
+                                <div class="form-group col-sm-6">
+                                    {{ Form::label('_color', 'สี') }}
+                                    <div class="input-group colorpicker">
+                                        {{ Form::text('_color', old('_color'), ['class' => 'form-control']) }}
+                                        <span class="input-group-addon">
+                                            <i></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
+                            <button class="btn btn-info link_zoom" onclick="window.open($('#_ref_link').val())"
+                                type="button" hidden="true">
+                                link zoom</button>
                             <a id="delete" data-href="{{ url('events') }}" data-id="" class="btn btn-danger">ลบ</a>
                             <button type="button" class="btn btn-dafault" data-dismiss="modal">ยกเลิก</button>
-                            <a href="#" data-href="{{ url('events') }}" class="btn btn-success btn-update"
+                            <a id="save" href="#" data-href="{{ url('events') }}" class="btn btn-success btn-update save"
                                 data-id="">ยืนยัน</a>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
@@ -179,7 +226,40 @@
 
     <script src="{{ asset('assets/plugins/chartjs/Chart.min.js') }}"></script>
 
+    <style>
+        .example-open .modal-backdrop {
+            background-color: #000000;
+            opacity: 0.5;
+        }
+
+    </style>
     <script>
+        $(document).ready(function() {
+
+            $('#responsive-modal').on('show.bs.modal', function(e) {
+                $('body').addClass("example-open");
+            }).on('hide.bs.modal', function(e) {
+                $('body').removeClass("example-open");
+            })
+
+            $('#modal-event').on('show.bs.modal', function(e) {
+                $('body').addClass("example-open");
+            }).on('hide.bs.modal', function(e) {
+                $('body').removeClass("example-open");
+            })
+
+            if ($("#isInstructor").val() !== "1") {
+                $("input").attr('readonly', true);
+                $(".save").attr('hidden', true);
+                $("#delete").attr('hidden', true);
+                $("#linkzoom").attr('herf', "www.google.com");
+                $(".link_zoom").attr('hidden', false);
+                $('#_time_start').click(false);
+            } else {
+
+            }
+        });
+
         var BASEURL = "{{ url('/') }}";
         $(document).ready(function() {
             $('#calendar').fullCalendar({
@@ -193,11 +273,12 @@
                 editable: true,
                 selectable: true,
                 selectHelper: true,
-
                 select: function(start) {
                     start = moment(start.format());
                     $('#date_start').val(start.format('YYYY-MM-DD'));
-                    $('#responsive-modal').modal('show');
+                    if ($("#isInstructor").val() == "1") {
+                        $('#responsive-modal').modal('show');
+                    }
                 },
 
                 events: BASEURL + '/events',
@@ -275,10 +356,7 @@
         });
 
         $(document).on('click', '.btn-update', function() {
-            // Creamos un objeto de tipo FormData de Jquery para enviar los valores recuperados del evento
-
-            var route_update = $(this).attr('data-href') + '/' + $(this).attr(
-            'data-id'); //recuperamos la ruta & id del evento
+            var route_update = $(this).attr('data-href') + '/' + $(this).attr('data-id');
             var data = {
                 'date_start': $('#_date_start').val(),
                 'title': $('#_title').val(),
@@ -297,7 +375,6 @@
                 _token: '{{ csrf_token() }}'
             };
 
-            alert(JSON.stringify(data))
             $.ajax({
                 data: data,
                 type: 'PATCH',
@@ -307,9 +384,9 @@
                 url: route_update,
                 success: function(result) {
                     $('#modal-event').modal('hide');
-                    if (result.status === 201) { //comprobamos si se actualizo de forma correcto
+                    if (result.status === 201) {
                         alert(result.message);
-                        location.reload(true); //forzamos la recarga de la pagina
+                        location.reload(true);
                     } else
                         alert(result.message);
                 },

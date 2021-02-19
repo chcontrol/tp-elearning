@@ -747,17 +747,23 @@ class CourseController extends Controller
     {
         $title = __t('รายงานผลคะแนนนักเรียน');
         $slug = $slug;
-        
+
 
         $data_studentlist = DB::table('attempts')
-        ->where('courses.slug', '=', $slug)
-        ->join('users', 'users.id', '=', 'attempts.user_id')
-        ->join('courses', 'courses.id', '=', 'attempts.course_id')
-        ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
-        ->get();
+            ->where('courses.slug', '=', $slug)
+            ->join('users', 'users.id', '=', 'attempts.user_id')
+            ->join('courses', 'courses.id', '=', 'attempts.course_id')
+            ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
+            ->get();
+
+        $getCourse_id = DB::table('courses')
+            ->where('courses.slug', '=', $slug)
+            ->select('id')
+            ->get();
 
 
-        return view(theme('dashboard.students_list'), compact('title', 'slug','data_studentlist'));
+
+        return view(theme('dashboard.students_list'), compact('title', 'slug', 'data_studentlist', 'getCourse_id'));
         // return $dataTable->render('users');
     }
 
@@ -765,10 +771,10 @@ class CourseController extends Controller
     {
         $title = __t('รายงานผลคะแนนนักเรียน');
         $slug = $slug;
-        return redirect('/plugin/certificate/'.$slug.'/download');
+        return redirect('/plugin/certificate/' . $slug . '/download');
     }
 
-    
+
 
     public function studentsList2(UsersDataTable $dataTable)
     {
@@ -790,12 +796,20 @@ class CourseController extends Controller
         //     ->get();
         return Datatables::of(
             DB::table('attempts')
-            ->where('courses.slug', '=', $slug)
-            ->join('users', 'users.id', '=', 'attempts.user_id')
-            ->join('courses', 'courses.id', '=', 'attempts.course_id')
-            ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
-            ->get()
-                
+                ->where('courses.slug', '=', $slug)
+                ->join('users', 'users.id', '=', 'attempts.user_id')
+                ->join('courses', 'courses.id', '=', 'attempts.course_id')
+                ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
+                ->get()
+
         )->make(true);
+    }
+
+
+    public function deleteCourse($id)
+    {
+        // echo $id;
+        Course::find($id)->delete_and_sync();
+        return back()->with('success', __a('bulk_action_success'));
     }
 }

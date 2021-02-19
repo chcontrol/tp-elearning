@@ -2,9 +2,24 @@
 
 @section('content')
 
+    @php
 
-@if( $data_studentlist->count())
-{{-- <div class="container">
+    $course = \App\Course::find($getCourse_id[0]->id);
+    $students = $course
+        ->students()
+        ->with('photo_query')
+        ->orderBy('enrolls.enrolled_at', 'desc')
+        ->paginate(50);
+
+    $user_id = $auth_user->id;
+    $enrolledCount = \App\Enroll::whereUserId($user_id)
+        ->whereStatus('success')
+        ->count();
+
+    @endphp
+
+    @if ($data_studentlist->count())
+        {{-- <div class="container">
     <div class="card bg-light mt-3">
         <div class="card-body">
             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
@@ -19,28 +34,84 @@
     </div>
 </div> --}}
 
-<div style="margin-bottom: 10px;text-align: right">
-    <a class="btn btn-warning" href="{{ route('export', ['slug' => $slug]) }}">ดาวน์โหลดผลคะแนน วิชา
-        {{ $slug }}</a>
-</div>
+        <div style="margin-bottom: 10px;text-align: right">
+            <a class="btn btn-warning" href="{{ route('export', ['slug' => $slug]) }}">ดาวน์โหลดผลคะแนน วิชา
+                {{ $slug }}</a>
+        </div>
+        <table class="table table-bordered" id="users-table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>percent completed</th>
+                </tr>
+            </thead>
+
+            @foreach ($students as $student)
+                @php
+                    $completed_percent = $course->completed_percent($student);
+                @endphp
+                <tr>
+                    <td> {!! $student->id !!} </td>
+                    <td> {!! $student->name !!} </td>
+                    <td> {!! $student->email !!} </td>
+                    <td> {!! $completed_percent !!} % </td>
+                </tr>
+            @endforeach
+        </table>
 
 
-<table class="table table-bordered" id="users-table" style="width:100%">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>total scores</th>
-            <th>course id</th>
-        </tr>
-    </thead>
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{-- <table class="table table-bordered" id="users-table" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>total scores</th>
+                <th>course id</th>
+            </tr>
+        </thead>
+    </table> --}}
     @else
         {!! no_data() !!}
     @endif
 
-    
+
 
 
 @stop

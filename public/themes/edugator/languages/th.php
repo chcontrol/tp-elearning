@@ -363,5 +363,6 @@ return [
     'how_upload_video'          => 'เลือกประเภทวิดีโอที่คุณต้องการ  (.mp4, YouTube, Vimeo อื่นๆ) ',
     'calendar'                  => 'กิจกรรม',
     'calendar_sidebar'          => 'กิจกรรม',
-    'print_certificate'         => 'พิมพ์ใบรับรอง'
+    'print_certificate'         => 'พิมพ์ใบรับรอง',
+    'delete'                    => 'ลบ'
 ];

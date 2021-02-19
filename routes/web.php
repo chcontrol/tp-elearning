@@ -183,6 +183,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
         Route::post('update-section/{id}', 'CourseController@updateSection')->name('update_section');
         Route::post('delete-section', 'CourseController@deleteSection')->name('delete_section');
+        Route::get('delete-course/{id}', 'CourseController@deleteCourse')->name('delete_course');
 
         Route::group(['prefix' => 'courses'], function () {
             Route::get('new', 'CourseController@create')->name('create_course');

@@ -68,7 +68,7 @@ class UsersExport implements FromCollection, WithHeadings,WithHeadingRow
         ->where('courses.slug', '=', $this->slug)
         ->join('users', 'users.id', '=', 'attempts.user_id')
         ->join('courses', 'courses.id', '=', 'attempts.course_id')
-        ->select('users.id', 'users.name', 'users.email', 'attempts.total_scores', 'attempts.course_id')
+        ->select('users.id', 'users.name', 'users.email','attempts.quiz_id', 'attempts.total_scores', 'attempts.earned_scores', 'attempts.course_id')
         ->get();
         // return $this->hasManyThrough(Deployment::class, Environment::class);
 
@@ -89,8 +89,8 @@ class UsersExport implements FromCollection, WithHeadings,WithHeadingRow
 
     public function headings(): array
     {
-      
-        return ["id", "name", "email", "total scores", "course"];
+
+        return ["id", "name", "email", "quiz id","total scores","earned scores", "course"];
     }
 
 

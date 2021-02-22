@@ -5,9 +5,7 @@
             <div class="card">
                 <div class="card-header">{{ __t('login') }} โดยใช้ Email รหัสผ่านหรือใช้ Social account</div>
                 <div style="color: aliceblue" >
-                <div > admin@demo.com </div>
-                <div >instructor@demo.com </div>
-                <div >student@demo.com</div>
+                
             </div>
                 <div class="card-body">
 

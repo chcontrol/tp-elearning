@@ -89,7 +89,9 @@
                             <div class="input-group-append">
                                 <span class="input-group-text">Minutes</span>
                             </div>
-                            <p class="text-muted"><small>Set zero to disable time limit.</small></p>
+                            <div class="input-group-append">
+                            {{-- <p class="text-muted"><small>Set zero to disable time limit.</small></p> --}}
+                        </div>
                         </div>
                     </div>
 

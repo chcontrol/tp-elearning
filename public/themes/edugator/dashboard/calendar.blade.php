@@ -126,16 +126,17 @@
                                         {{ Form::text('title', old('title'), ['class' => 'form-control']) }}
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        {{ Form::label('course_id', 'วิชาที่สอน*') }}
-                                        {{ Form::text('course_id', old('course_id'), ['class' => 'form-control']) }}
+                                        {{-- {{ Form::label('course_id', 'วิชาที่สอน*') }}
+                                        {{ Form::text('course_id', old('course_id'), ['class' => 'form-control']) }} --}}
 
                                         <div class="form-group {{ $errors->has('topic_id') ? ' has-error' : '' }}">
                                             <label class="mb-3">{{ __t('topic') }}</label>
+                                            
                                             @if ($a->count())
-                                                <select name="topic_id" id="course_topic" class="form-control select2">
-                                                    <option value="">{{ __t('select_topic') }}</option>
+                                                <select name="course_id" id="course_id" class="form-control select2">
+                                                    <option value="">{{ __t('courses') }}</option>
                                                     @foreach ($a as $i)
-                                                        <option value={{ $i->id }}>{{ $i->title }}</option>
+                                                        <option {{selected($i->id)}} value={{ $i->id }}>{{ $i->title }}</option>
                                                     @endforeach
                                                 </select>
                                             @endif
@@ -219,6 +220,23 @@
                                     {{ Form::text('_course_id', old('_course_id'), ['class' => 'form-control']) }}
 
                                 </div>
+
+                                {{-- <div class="form-group {{ $errors->has('topic_id') ? ' has-error' : '' }}">
+                                    <label class="mb-3">{{ __t('topic') }}</label>
+                                    
+                                    @if ($a->count())
+                                        <select name="course_id" id="course_id" class="form-control select2">
+                                            <option value="">{{ __t('courses') }}</option>
+                                            @foreach ($a as $i)
+                                                <option {{selected($i->id )}}  value={{ $i->id }}>{{ $i->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    @endif
+                                    @if ($errors->has('topic_id'))
+                                        <span
+                                            class="invalid-feedback"><strong>{{ $errors->first('topic_id') }}</strong></span>
+                                    @endif
+                                </div> --}}
                             </div>
                             <div class="row">
                                 <div class="form-group col-sm-6">
@@ -254,6 +272,7 @@
                                         <span class="input-group-addon">
                                             <i>เลือกสี</i>
                                         </span>
+                                        
                                     </div>
                                 </div>
                             </div>

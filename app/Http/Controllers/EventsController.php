@@ -19,6 +19,13 @@ class EventsController extends Controller
         return Response()->json($data);
     }
 
+    public function index2()
+    {
+        $data = Event::get(['id', 'title', 'discription', 'start', 'end', 'color', 'ref_link', 'course_id', 'note']);
+
+        return Response()->json($data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

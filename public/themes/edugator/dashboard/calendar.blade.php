@@ -12,6 +12,10 @@
         ->whereStatus('success')
         ->count();
 
+    // $course = Course::whereSlug($slug)
+    //     ->with('sections', 'sections.items', 'sections.items.attachments')
+    //     ->first();
+
     $user = Auth::user();
     // print_r($user);
     echo '<input type="text" id="isInstructor" value="' . $user->isInstructor . '" hidden="hidden" />';
@@ -19,6 +23,11 @@
     $wishListed = \Illuminate\Support\Facades\DB::table('wishlists')
         ->whereUserId($user_id)
         ->count();
+
+    $a = DB::table('courses')
+        // ->where('courses.slug', '=', $this->slug)
+        ->select('id', 'title')
+        ->get();
 
     $myReviewsCount = \App\Review::whereUserId($user_id)->count();
     $purchases = $auth_user
@@ -28,10 +37,10 @@
     @endphp
 
     @php
-    $courses = $auth_user
-        ->wishlist()
-        ->publish()
-        ->get();
+    // $courses = $auth_user
+    //     ->wishlist()
+    //     ->publish()
+    //     ->get();
 
     // $enrolledCount = \App\Enroll::whereUserId($user_id)
     //     ->whereStatus('success')
@@ -45,8 +54,9 @@
     //     ->purchases()
     //     ->take(10)
     //     ->get();
-
     @endphp
+
+
 
 
 
@@ -64,6 +74,52 @@
                         </div>
                         <div class="modal-body">
                             <div class="container">
+
+                                {{-- <div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }}">
+                                    <label class="mb-3">{{__t('category')}}</label>
+        
+                                    @if ($courses->count())
+                                        <select name="category_id" id="course_category" class="form-control select2">
+                                            <option value="">{{__t('select_category')}}</option>
+                                            @foreach ($courses as $category)
+                                                <optgroup label="{{$category->category_name}}">
+                                                    @if ($category->sub_categories->count())
+                                                        @foreach ($category->sub_categories as $sub_category)
+                                                            <option value="{{$sub_category->id}}">
+                                                                {{$sub_category->category_name}}
+                                                            </option>
+                                                        @endforeach
+                                                    @endif
+                                                </optgroup>
+                                            @endforeach
+                                        </select>
+                                    @endif
+                                    @if ($errors->has('category_id'))
+                                        <span class="invalid-feedback"><strong>{{ $errors->first('category_id') }}</strong></span>
+                                    @endif
+                                </div> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <div class="row">
                                     <div class="form-group col-sm-6">
                                         {{ Form::label('title', 'หัวข้อที่สอน') }}
@@ -72,6 +128,22 @@
                                     <div class="form-group col-sm-6">
                                         {{ Form::label('course_id', 'วิชาที่สอน*') }}
                                         {{ Form::text('course_id', old('course_id'), ['class' => 'form-control']) }}
+
+                                        <div class="form-group {{ $errors->has('topic_id') ? ' has-error' : '' }}">
+                                            <label class="mb-3">{{ __t('topic') }}</label>
+                                            @if ($a->count())
+                                                <select name="topic_id" id="course_topic" class="form-control select2">
+                                                    <option value="">{{ __t('select_topic') }}</option>
+                                                    @foreach ($a as $i)
+                                                        <option value={{ $i->id }}>{{ $i->title }}</option>
+                                                    @endforeach
+                                                </select>
+                                            @endif
+                                            @if ($errors->has('topic_id'))
+                                                <span
+                                                    class="invalid-feedback"><strong>{{ $errors->first('topic_id') }}</strong></span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -180,7 +252,7 @@
                                     <div class="input-group colorpicker">
                                         {{ Form::text('_color', old('_color'), ['class' => 'form-control']) }}
                                         <span class="input-group-addon">
-                                            <i></i>
+                                            <i>เลือกสี</i>
                                         </span>
                                     </div>
                                 </div>
@@ -235,7 +307,7 @@
     </style>
     <script>
         $(document).ready(function() {
-
+            // $('#responsive-modal').show()
             $('#responsive-modal').on('show.bs.modal', function(e) {
                 $('body').addClass("example-open");
             }).on('hide.bs.modal', function(e) {

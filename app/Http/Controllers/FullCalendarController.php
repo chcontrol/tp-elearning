@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Course;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use Redirect,Response;
@@ -26,8 +28,26 @@ class FullCalendarController extends Controller
 		//return view('fullcalendar');
 		$title = __t('dashboard');
         $chartData = null;
+        // $categories = Category::parent()->get();
+        $courses = Course::publish()->get();
 
-        return view(theme('dashboard.calendar'), compact('title', 'chartData'));
+
+
+
+		$courses = Course::query();
+
+		$courses = $courses->where('is_featured', 1);
+
+
+
+
+
+
+
+
+        $courses = Course::whereSlug(1)->with('sections', 'sections.items', 'sections.items.attachments')->first();
+
+        return view(theme('dashboard.calendar'), compact('title', 'chartData','courses'));
 
 	}
 	public function create(Request $request)

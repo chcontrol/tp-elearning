@@ -288,7 +288,7 @@
                         <span>และผู้ที่สนใจท่านอื่นไว้แล้ว</span>
                         <br>
                         <br>
-                        <a href="{{route('create_course')}}" class="btn btn-theme-primary3 btn-lg"  >คำถามที่พบบ่อย</a>
+                        <a href="{{route('post', 'คำถามที่พบบ่อย')}}" class="btn btn-theme-primary3 btn-lg"  >คำถามที่พบบ่อย</a>
 
                     </div>
 

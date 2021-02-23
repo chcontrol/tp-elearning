@@ -16,25 +16,32 @@
         ->purchases()
         ->take(10)
         ->get();
-    @endphp
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
-                <div class="card-icon mr-2">
-                    <span><i class="la la-user"></i> </span>
-                </div>
 
-                <div class="card-info">
-                    <div class="text-value">
-                        <h4>{{ $enrolledCount }}</h4>
+    $myCalendarCount =  \Illuminate\Support\Facades\DB::select("SELECT  count(enrolls.user_id) as count_event from Events  
+        Left Join enrolls On Events.course_id = enrolls.course_id
+        Left Join courses On Events.course_id = courses.id
+        WHERE enrolls.user_id = 2 or courses.id = 2 ");
+
+
+    @endphp
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
+                    <div class="card-icon mr-2">
+                        <span><i class="la la-user"></i> </span>
                     </div>
-                    <div>{{ __t('enrolled') }}</div>
+
+                    <div class="card-info">
+                        <div class="text-value">
+                            <h4>{{ $enrolledCount }}</h4>
+                        </div>
+                        <div>{{ __t('enrolled') }}</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {{-- <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
             <div class="dashboard-card mb-3 d-flex border p-3 bg-light">
                 <div class="card-icon mr-2">
                     <span><i class="la la-heart"></i> </span>
@@ -65,35 +72,34 @@
         </div> --}}
 
 
-        <div class="col-lg-3 col-md-6">
-            <div class="dashboard-card mb-3 d-flex border p-3 bg-light" onClick="" >
-                <div class="card-icon mr-2">
-                    <span><i class="la la-calendar"></i> </span>
-                </div>
-
-                <div class="card-info">
-                    <div class="text-value">
-                        <h4>{{ $myReviewsCount }}</h4>
+            <div class="col-lg-3 col-md-6">
+                <div class="dashboard-card mb-3 d-flex border p-3 bg-light" onClick="">
+                    <div class="card-icon mr-2">
+                        <span><i class="la la-calendar"></i> </span>
                     </div>
-                    <div>
+
+                    <div class="card-info">
+                        <div class="text-value">
+                            <h4>{{ $myCalendarCount[0]->count_event }}</h4>
+                        </div>
+                        <div>
                             {{ __t('calendar') }}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
-
-{{-- 
-            <div class="popular-courses-cards-wrap mt-3">
+        {{-- <div class="popular-courses-cards-wrap mt-3">
                 <div class="row">
-                    @foreach($courses as $course)
-                        {!! course_card($course, 'col-md-3') !!}
+                    @foreach ($courses as $course)
+                        {!!  course_card($course, 'col-md-3') !!}
                     @endforeach
                 </div>
             </div> --}}
 
-        </div>
+    </div>
 
     @if ($chartData)
         <div class="p-4 bg-white">
@@ -105,7 +111,7 @@
 
 
 
-    @if ($purchases->count() > 0 || 1==2)
+    @if ($purchases->count() > 0 || 1 == 2)
         <h4 class="my-4"> {{ sprintf(__t('my_last_purchases'), $purchases->count()) }} </h4>
 
         <table class="table table-striped table-bordered">
@@ -166,12 +172,16 @@
             var ChartArea = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: {!! json_encode(array_keys($chartData)) !!},
+                    labels: {
+                        !!json_encode(array_keys($chartData)) !!
+                    },
                     datasets: [{
                         label: 'Earning ',
                         backgroundColor: '#216094',
                         borderColor: '#216094',
-                        data: {!! json_encode(array_values($chartData)) !!},
+                        data: {
+                            !!json_encode(array_values($chartData)) !!
+                        },
                         borderWidth: 2,
                         fill: false,
                         lineTension: 0,

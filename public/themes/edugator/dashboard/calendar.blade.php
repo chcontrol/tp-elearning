@@ -6,6 +6,10 @@
 @section('content')
 
     @php
+
+
+
+
     $user_id = $auth_user->id;
 
     $enrolledCount = \App\Enroll::whereUserId($user_id)
@@ -19,6 +23,7 @@
     $user = Auth::user();
     // print_r($user);
     echo '<input type="text" id="isInstructor" value="' . $user->isInstructor . '" hidden="hidden" />';
+    echo '<input type="text" id="user_id" value="' . $user->id . '" hidden="hidden" />';
 
     $wishListed = \Illuminate\Support\Facades\DB::table('wishlists')
         ->whereUserId($user_id)
@@ -133,7 +138,7 @@
                                             <label class="mb-3">{{ __t('topic') }}</label>
                                             
                                             @if ($a->count())
-                                                <select name="course_id" id="course_id" class="form-control select2">
+                                                <select required name="course_id" id="course_id" class="form-control select2">
                                                     <option value="">{{ __t('courses') }}</option>
                                                     @foreach ($a as $i)
                                                         <option {{selected($i->id)}} value={{ $i->id }}>{{ $i->title }}</option>
@@ -372,7 +377,7 @@
                     }
                 },
 
-                events: BASEURL + '/events',
+                events: BASEURL + `/events?user_id=${$("#user_id").val()}`,
 
                 eventClick: function(event, jsEvent, view) {
                     var date_start = $.fullCalendar.moment(event.start).format('YYYY-MM-DD');

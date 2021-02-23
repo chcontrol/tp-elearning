@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
 {
@@ -12,11 +13,17 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $getStudents = DB::select("SELECT * from Events  
+        Left Join enrolls On Events.course_id = enrolls.course_id
+        Left Join courses On Events.course_id = courses.id
+        WHERE enrolls.user_id = $request->user_id or courses.id = $request->user_id "  
+    );
+//
         $data = Event::get(['id', 'title', 'discription', 'start', 'end', 'color', 'ref_link', 'course_id', 'note']);
 
-        return Response()->json($data);
+        return Response()->json($getStudents);
     }
 
     public function index2()

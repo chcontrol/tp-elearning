@@ -20,7 +20,7 @@ function dashboard_menu(){
             'create_course' => [
                 'name' => __t('create_new_course'),
                 'icon' => '<i class="la la-chalkboard-teacher"></i>',
-                'is_active' => request()->is('dashboard/courses/new'),
+                'is_active' => request()->is('dashboard/courses/*'),
             ],
             'my_courses' => [
                 'name' => __t('my_courses'),
@@ -47,11 +47,11 @@ function dashboard_menu(){
                 'icon' => '<i class="la la-check-double"></i>',
                 'is_active' => request()->is('dashboard/courses-has-quiz*'),
             ],
-            'courses_has_assignments' => [
-                'name' => __t('assignments'),
-                'icon' => '<i class="la la-star"></i>',
-                'is_active' => request()->is('dashboard/assignments*'),
-            ],
+            // 'courses_has_assignments' => [
+            //     'name' => __t('assignments'),
+            //     'icon' => '<i class="la la-star"></i>',
+            //     'is_active' => request()->is('dashboard/assignments*'),
+            // ],
             'instructor_discussions' => [
                 'name' => __t('discussions') . $pendingDiscusionBadge,
                 'icon' => '<i class="la la-question-circle-o"></i>',
@@ -92,15 +92,15 @@ function dashboard_menu(){
             'icon' => '<i class="la la-tools"></i>',
             'is_active' => request()->is('dashboard/settings*'),
         ],
-        'dashboard' => [
-            'name' => __t('students_progress_report'),
-            'icon' => '<i class="la la-calendar"></i>',
-            'is_active' => request()->is('dashboard/dashboard*'),
-        ],
+        // 'dashboard' => [
+        //     'name' => __t('students_progress_report'),
+        //     'icon' => '<i class="la la-calendar"></i>',
+        //     'is_active' => request()->is('dashboard/dashboard*'),
+        // ],
         'calendar' => [
             'name' => __t('calendar_sidebar'),
             'icon' => '<i class="la la-calendar"></i>',
-            'is_active' => request()->is('dashboard/dashboard*'),
+            'is_active' => request()->is('calendar*'),
         ],
         
     ]);

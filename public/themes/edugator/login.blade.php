@@ -3,7 +3,7 @@
         <div class="col-md-8">
 
             <div class="card">
-                <div class="card-header">{{ __t('login') }} โดยใช้ Email รหัสผ่านหรือใช้ Social account</div>
+                <div class="card-header">{{ __t('login') }} เข้าสู่ระบบโดยใช้อีเมล และรหัสผ่าน</div>
                 <div style="color: aliceblue" >
                 
             </div>

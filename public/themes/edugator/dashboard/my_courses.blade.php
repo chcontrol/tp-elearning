@@ -64,7 +64,7 @@
                             @php do_action('my_courses_list_actions_after', $course); @endphp
 
                             <a href="{{ route('delete_course', $course->id) }}" class="font-weight-bold mr-3" onclick = "if (! confirm('ต้องการลบครอสเรียนใช่หรือไม่?')) { return false; }">
-                                <i class="la la-pencil-square-o"></i> {{ __t('delete') }}
+                                <i class="la la-trash"></i> {{ __t('delete') }}
                             </a>
 
                         </div>

@@ -25,7 +25,7 @@
                         สนใจเข้าเรียนออนไลน์
                     </span>
                 </br>
-                        <a href="{{route('categories')}}" class="btn btn-theme-primary2 btn-lg">เลือกคอร์สเรียน</a>
+                        <a href="{{route('courses')}}" class="btn btn-theme-primary2 btn-lg">เลือกหลักสูตร</a>
                     </div>
 
                 </div>
@@ -65,7 +65,7 @@
 
                 <div class="col-md-3">
                     <div class="home-info-box">
-                        <img style="height: 80px;width: 80px" src="{{theme_url('images/318.png')}}">
+                        <img style="height: 90px;width: 110px; max-width: 110px; Margin-bottom: 10px;" src="{{theme_url('images/318.png')}}">
                         <h3 class="info-box-title">อาจารย์ผู้สอน <br>เป็นที่ยอมรับในระดับสากล</h3>
                         {{-- <p class="info-box-desc">Every course designed by expert instructor</p> --}}
                     </div>

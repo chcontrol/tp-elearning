@@ -210,7 +210,7 @@ return [
     'update_status'                 => 'Update Status',
     'back_to_payments'              => 'Back to Payments',
     'back_to'                       => 'Back to',
-    'courses'                       => 'คอร์สเรียน',
+    'courses'                       => 'หลักสูตรทั้งหมด',
     'update'                        => 'อัพเดต',
     'bulk_action_success'           => 'Bulk actions completed successfully',
     'set_status'                    => 'Set Status',

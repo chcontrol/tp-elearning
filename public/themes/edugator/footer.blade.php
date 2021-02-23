@@ -44,8 +44,8 @@
 
                         <ul class="footer-links">
                             <li><a href="{{route('home')}}">{{__t('home')}}</a> </li>
-                            <li><a href="{{route('dashboard')}}">{{__t('settings')}}</a> </li>
-                            <li><a href="{{route('courses')}}">{{__t('courses')}}</a> </li>
+                            <li><a href="{{route('profile_settings')}}">{{__t('settings')}}</a> </li>
+                            <li><a href="{{route('categories')}}">{{__t('courses')}}</a> </li>
                             <li><a href="{{route('dashboard')}}">{{__t('dashboard')}}</a> </li>
                             <li><a href="{{route('register')}}">{{__t('register')}}</a> </li>
                             {{-- <li><a href="{{route('featured_courses')}}">{{__t('featured_courses')}}</a> </li> --}}

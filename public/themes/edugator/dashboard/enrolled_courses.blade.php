@@ -62,8 +62,8 @@
 
                             {{-- {{print_r($completed_course_id)}} --}}
                             {{-- <a href="http://academy.tappinthakorn.com/plugin/certificate/8/download" class="btn btn-success"> <i class="la la-certificate"></i> Download Certificate</a> --}}
-                            <a href="{{ route('certificate', $course->id) }}" class="btn btn-sm btn-warning mt-2"
-                                target="_blank"><i class="la la-file"></i> {{ __t('print_certificate') }} </a>
+                            <a href="{{ route('certificate', $course->id) }}" class="btn btn-sm btn-success mt-2"
+                                target="_blank"><i class="la la-certificate"></i> {{ __t('print_certificate') }} </a>
                         @endif
                     </td>
                 </tr>

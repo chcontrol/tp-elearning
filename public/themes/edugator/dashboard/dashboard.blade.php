@@ -17,10 +17,10 @@
         ->take(10)
         ->get();
 
-    $myCalendarCount =  \Illuminate\Support\Facades\DB::select("SELECT  count(enrolls.user_id) as count_event from Events  
-        Left Join enrolls On Events.course_id = enrolls.course_id
-        Left Join courses On Events.course_id = courses.id
-        WHERE enrolls.user_id = 2 or courses.id = 2 ");
+    // $myCalendarCount =  \Illuminate\Support\Facades\DB::select("SELECT  count(enrolls.user_id) as count_event from Events  
+    //     Left Join enrolls On Events.course_id = enrolls.course_id
+    //     Left Join courses On Events.course_id = courses.id
+    //     WHERE enrolls.user_id = 2 or courses.id = 2 ");
 
 
     @endphp
@@ -80,7 +80,8 @@
 
                     <div class="card-info">
                         <div class="text-value">
-                            <h4>{{ $myCalendarCount[0]->count_event }}</h4>
+                            {{-- <h4>{{ $myCalendarCount[0]->count_event }}</h4> --}}
+                            <h4>0</h4>
                         </div>
                         <div>
                             {{ __t('calendar') }}

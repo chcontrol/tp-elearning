@@ -83,10 +83,12 @@ if (isset($auth_user->id)) {
 
 
 
-                <div class="course-card-cart-wrap d-flex justify-content-between">
-                    {!! $course->price_html(false, false) !!}
-                    <div class="course-card-btn-wrap"></div>
-                    <div class="course-card-btn-wrap">
+                <div class="course-card-cart-wrap d-flex justify-content-between" style="float: right;">
+                    {{-- {!! $course->price_html(false, false) !!} --}}
+                    {{-- <div class="course-card-btn-wrap">
+                        
+                    </div> --}}
+                    <div class="btn-group">
 
                         @if ($auth_user && in_array($course->id, $auth_user->get_option('enrolled_courses', [])))
                             <a href="{{ route('course', $course->slug) }}">{{ __t('enrolled') }}</a>
@@ -96,23 +98,35 @@ if (isset($auth_user->id)) {
                             @php($in_cart = cart($course->id))
 
 
-                                @if ($course->check_price() > 0)
-                                    {{ $course->check_price() }}
 
-                                    {{-- <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"  data-course-id="{{$course->id}}" {{$in_cart? 'disabled="disabled"' : ''}}> --}}
-                                    <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"
-                                        data-course-id="{{ $course->id }}"
+                                {{-- <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"
+                                    data-course-id="{{ $course->id }}" {{ $in_cart ? 'disabled="disabled"' : '' }}>
+                                    @if ($in_cart)
+
+                                </button> --}}
+                                @if ($course->check_price() > 0)
+                                    <button type="button"
+                                        class="btn btn-sm btn-primary btn-lg add-to-cart-btn btn-block mr-2 "
+                                        style="width:100px" data-course-id="{{ $course->id }}"
                                         {{ $in_cart ? 'disabled="disabled"' : '' }}>
-                                        @if ($in_cart)
-                                            {{-- <i class='la la-check-circle'> --}}
+                                        @if ($in_cart > 0)
                                             </i> {{ __t('in_cart') }}
                                         @else
-                                            {{-- <i class="la la-shopping-cart"></i> --}}
                                             {{ __t('หยิบใส่ตะกร้า') }}
                                         @endif
                                     </button>
+
+                                    <form action="{{ route('add_to_cart') }}" class="add_to_cart_form" method="post">
+                                        @csrf
+
+                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                        <button type="submit" class="btn btn-sm    btn-outline-dark " name="cart_btn"
+                                            value="buy_now">ซื้อทันที</button>
+
+                                    </form>
+
                                 @else
-                                    {{ $course->check_price() }}
+                                    {{-- {{ $course->check_price() }} --}}
 
                                     @if ($in_cart)
                                         <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"
@@ -127,8 +141,10 @@ if (isset($auth_user->id)) {
                                             method="post">
                                             @csrf
                                             <input type="hidden" name="course_id" value="{{ $course->id }}">
+
                                             <button type="submit"
                                                 class="btn btn-sm btn-warning btn-lg btn-block">{{ __t('enroll_now') }}</button>
+
                                         </form>
 
 

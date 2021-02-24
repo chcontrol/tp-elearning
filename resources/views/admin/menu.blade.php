@@ -29,11 +29,11 @@
 
             <li> <a href="{{route('admin_courses')}}"><i class="la la-chalkboard"></i> {{__a('courses')}}</a>  </li>
 
-            {{-- <li>
+            <li>
                 <a href="{{route('plugins')}}" class="{{request()->is('admin/plugins*') ? 'active' : ''}}" >
                     <i class="la la-plug"></i> {{__a('plugins')}}
                 </a>
-            </li> --}}
+            </li>
 
             {{-- <li>
                 <a href="{{route('themes')}}" class="{{request()->is('admin/themes*') ? 'active' : ''}}">

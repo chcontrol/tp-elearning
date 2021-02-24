@@ -241,6 +241,17 @@ class Course extends Model
         return $price_html;
     }
 
+    public function check_price(){
+        $current_price = $this->sale_price ;
+        $price = "";
+        if ( $this->paid && $this->price > 0){
+            $price = $current_price;
+        }else{
+            $price = 0;
+        }
+        return $price;
+    }
+
     public function status_html($badge = true){
         $status = $this->status;
 

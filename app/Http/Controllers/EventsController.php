@@ -15,10 +15,14 @@ class EventsController extends Controller
      */
     public function index(Request $request)
     {
-        $getStudents = DB::select("SELECT * from Events  
+        $getStudents = DB::select("SELECT Events.id,Events.title,description,
+        Events.start,Events.end,Events.color,Events.color,Events.ref_link,Events.course_id,Events.note
+         from Events  
         Left Join enrolls On Events.course_id = enrolls.course_id
         Left Join courses On Events.course_id = courses.id
-        WHERE enrolls.user_id = $request->user_id or courses.id = $request->user_id "  
+        WHERE enrolls.user_id = $request->user_id or courses.id = $request->user_id
+        Group by Events.id
+         "  
     );
 //
         $data = Event::get(['id', 'title', 'discription', 'start', 'end', 'color', 'ref_link', 'course_id', 'note']);

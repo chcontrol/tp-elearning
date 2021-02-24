@@ -956,7 +956,7 @@ $(function() {
             success: function (response) {
                 if (response.success){
                     $('.dropdown.mini-cart-item').html(response.cart_html);
-                    $btn.html("<i class='la la-check-circle'></i> In Cart");
+                    $btn.html("<i class='la la-check-circle'></i> อยู่ในตะกร้า");
                 }else{
                     $btn.removeClass('loader').removeAttr('disabled');
                 }

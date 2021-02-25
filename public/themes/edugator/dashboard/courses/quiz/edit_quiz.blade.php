@@ -107,7 +107,7 @@
                     <div class="form-group  col-md-4">
                         <label>Passing Score (%)</label>
                         <input type="number" class="form-control" name="quiz_option[passing_score]"
-                            value="{{ $item->option('passing_score') ? $item->option('passing_score') : '100' }}">
+                            value="{{ $item->option('passing_score') ? $item->option('passing_score') : '50' }}">
                         <p class="text-muted"><small>Student have to collect this score in percent for the pass this
                                 quiz.</small></p>
                     </div>

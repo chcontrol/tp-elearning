@@ -4,6 +4,9 @@
 @endphp
 
 @if($questions->count())
+
+<input type="hidden" value={{$questions->count()}} id="questionsCount" />
+
     @foreach($questions as $question)
         <div id="question-{{$question->id}}" class="quiz-question-item  input-group mb-3">
 

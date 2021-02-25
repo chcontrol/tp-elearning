@@ -1,4 +1,5 @@
 @if($section->items->count())
+
     @foreach($section->items as $item)
 
         <div id="section-item-{{$item->id}}" class="edit-curriculum-item mb-2 edit-curriculum-{{$item->item_type}}">

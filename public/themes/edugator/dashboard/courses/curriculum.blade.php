@@ -44,6 +44,9 @@
 
 
                         <div class="dashboard-section-body bg-light p-3">
+                            จำนวนชุดคำถาม : {{$section->items->count()}}
+                            
+
                             @include(theme('dashboard.courses.section-items'))
                         </div>
 

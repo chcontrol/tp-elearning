@@ -83,27 +83,37 @@ if (isset($auth_user->id)) {
 
 
 
-                <div class="course-card-cart-wrap d-flex justify-content-between" style="float: right;">
-                    {{-- {!! $course->price_html(false, false) !!} --}}
-                    {{-- <div class="course-card-btn-wrap">
-                        
-                    </div> --}}
-                    <div class="btn-group">
+{{-- 
+                @foreach ($auth_user->enrolls as $course)
+                
+                            <strong>{{ $course->id }}</strong>
 
+                            @endforeach --}}
+
+                {{-- {{in_array($course->id, $auth_user->get_option('enrolled_courses', []))}} --}}
+
+
+
+
+
+
+
+              
+                {{-- {{
+                            in_array($course->id, $auth_user->get_option('enrolled_courses', []))
+                }} --}}
+
+                <div class="course-card-cart-wrap d-flex justify-content-between" style="float: right;">
+                    <div class="btn-group">
+                        {{-- @php
+                        echo '555';
+                        print_r(in_array($course->id, $auth_user->get_option('enrolled_courses', [])))
+                        @endphp --}}
+                        
                         @if ($auth_user && in_array($course->id, $auth_user->get_option('enrolled_courses', [])))
                             <a href="{{ route('course', $course->slug) }}">{{ __t('enrolled') }}</a>
                         @else
-
-
                             @php($in_cart = cart($course->id))
-
-
-
-                                {{-- <button type="button" class="btn btn-sm btn-theme-primary add-to-cart-btn"
-                                    data-course-id="{{ $course->id }}" {{ $in_cart ? 'disabled="disabled"' : '' }}>
-                                    @if ($in_cart)
-
-                                </button> --}}
                                 @if ($course->check_price() > 0)
                                     <button type="button"
                                         class="btn btn-sm btn-primary btn-lg add-to-cart-btn btn-block mr-2 "
@@ -144,16 +154,10 @@ if (isset($auth_user->id)) {
 
                                             <button type="submit"
                                                 class="btn btn-sm btn-warning btn-lg btn-block">{{ __t('enroll_now') }}</button>
-
                                         </form>
-
-
                                         {{-- {{ __t('ลงทะเบียนเลย') }} --}}
                                     @endif
-
-
                                 @endif
-
                             @endif
                         </div>
                     </div>

@@ -51,7 +51,7 @@
                 @endphp
 
                 @if($logoUrl)
-                    <img style="height: 40px" src="{{media_file_uri(get_option('site_logo'))}}" alt="{{get_option('site_title')}}" />
+                <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.png')}}" alt="{{get_option('site_title')}}" />
                 @else
                 <img style="height: 40px" src="{{asset('assets/images/Logo-Mega.png')}}" alt="{{get_option('site_title')}}" />
                 @endif

@@ -173,16 +173,12 @@
             var ChartArea = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: {
-                        !!json_encode(array_keys($chartData)) !!
-                    },
+                    labels: {!! json_encode(array_keys($chartData)) !!},
                     datasets: [{
                         label: 'Earning ',
                         backgroundColor: '#216094',
                         borderColor: '#216094',
-                        data: {
-                            !!json_encode(array_values($chartData)) !!
-                        },
+                        data: {!! json_encode(array_values($chartData)) !!},
                         borderWidth: 2,
                         fill: false,
                         lineTension: 0,

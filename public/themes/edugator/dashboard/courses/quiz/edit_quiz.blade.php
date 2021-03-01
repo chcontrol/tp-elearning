@@ -55,7 +55,7 @@
                 @include(theme('dashboard.courses.quiz.questions'), ['quiz' => $item])
             </div>
 
-            <button type="button" id="quiz-add-question-btn" class="btn btn-success btn-lg btn-block mt-5">
+            <button onclick="$('#AnswerSelectedCreate').val(0)" type="button" id="quiz-add-question-btn" class="btn btn-success btn-lg btn-block mt-5">
                 <i class="la la-plus-circle"></i> Add Question
             </button>
 
@@ -94,7 +94,7 @@
                         <label>Time Limit</label>
                         <div class="input-group">
                             <input type="number" class="form-control" name="quiz_option[time_limit]"
-                                value="{{ $item->option('time_limit') ? $item->option('time_limit') : '5' }}">
+                                value="{{ $item->option('time_limit') ? $item->option('time_limit') : '60' }}">
                             <div class="input-group-append">
                                 <span class="input-group-text">Minutes</span>
                             </div>
@@ -212,7 +212,7 @@
                             </div>
                             <label class="m-0 mt-1 text-right checkbox">
                                 Correct answer <input type="checkbox" class="is_correct_input"
-                                    name="options[{index}][is_correct]" value="1"><span></span>
+                                    name="options[{index}][is_correct]" value="1" onclick="$('#AnswerSelectedCreate').val(1)"><span></span>
                             </label>
                         </div>
                     </div>
@@ -304,7 +304,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-purple"><i class="la la-save"></i> Save Question</button>
+                    <input type="hidden" id="AnswerSelectedCreate" value="0" />
+                    <button onclick="checkAnswerCreateSelected()" type="submit" class="btn btn-purple"><i class="la la-save"></i> Save Question</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </form>
@@ -320,6 +321,17 @@
     function getQuestions_limit(){
         // alert($('#questionsCount').val())
         $('#questions_limit').val($('#questionsCount').val())
+    }
+
+    function checkAnswerCreateSelected() {
+        if ($("#AnswerSelectedCreate").val() == 0) {
+            alert("กรุณาเลือกข้อที่ถูก")
+            event.preventDefault()
+        } else {
+            $("#edit-question-form").submit();
+            location.reload();
+
+        }
     }
 
 </script>

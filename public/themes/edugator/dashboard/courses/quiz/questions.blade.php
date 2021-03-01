@@ -25,7 +25,7 @@
                 <span class="question-title">{{$question->title}}</span>
             </p>
             <div class="input-group-append">
-                <a href="javascript:;" class="input-group-text question-edit" data-question-id="{{$question->id}}"><i class="la la-pencil-square"></i> </a>
+                <a href="javascript:;" onclick="$('#AnswerSelectedCreate').val(1)" class="input-group-text question-edit" data-question-id="{{$question->id}}"><i class="la la-pencil-square"></i> </a>
                 <a href="javascript:;" class="input-group-text question-trash bg-danger text-white" data-question-id="{{$question->id}}"><i class="la la-trash"></i> </a>
             </div>
 

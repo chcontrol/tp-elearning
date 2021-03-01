@@ -209,7 +209,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button onclick="checkAnswerSelected()" type="submit" class="btn btn-purple"><i
+                    <input type="hidden" id="AnswerSelected" value="0" />
+                    <button id="checkBtn" onclick="" type="submit" class="btn btn-purple"><i
                             class="la la-save"></i> Save
                         Question</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -223,14 +224,20 @@
 
 <script>
     function checkAnswerSelected() {
-        
+        if ($("#AnswerSelected").val() == 0) {
+            alert("กรุณาเลือกข้อที่ถูก")
+            event.preventDefault()
+        } else {
+            $("#edit-question-form").submit();
+            location.reload();
+        }
     }
-    $('#edit-question-form').validate({
-            rules: {
-                'is_correct_input': {
-                    required: true
-                }
-            },
-        });
+
+
+    // $(document).ready(function() {
+    //     $('.is_correct_input').click(function() {
+    //         $("#AnswerSelected").val(1)
+    //     });
+    // });
 
 </script>

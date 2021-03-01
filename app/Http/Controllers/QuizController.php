@@ -250,7 +250,7 @@ class QuizController extends Controller
     }
 
     public function createQuestion(Request $request, $course_id, $quiz_id){
-        $validation = Validator::make($request->input(), ['question_title' => 'required']);
+        $validation = Validator::make($request->input(), ['question_title' => 'required','score'=>'required']);
 
         if ($validation->fails()){
             $errors = $validation->errors()->toArray();
@@ -271,7 +271,7 @@ class QuizController extends Controller
             'title'         => clean_html($request->question_title),
             'image_id'      => $request->image_id,
             'type'          => $request->question_type,
-            'score'         => $request->score,
+            'score'         => clean_html($request->score),
             'sort_order'   => $sort_order,
         ];
 
@@ -313,7 +313,7 @@ class QuizController extends Controller
     }
 
     public function updateQuestion(Request $request){
-        $validation = Validator::make($request->input(), ['question_title' => 'required']);
+        $validation = Validator::make($request->input(), ['question_title' => 'required','score'=>'required']);
 
         if ($validation->fails()){
             $errors = $validation->errors()->toArray();

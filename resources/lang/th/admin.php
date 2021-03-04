@@ -87,7 +87,7 @@ return [
     'success'                       => 'Success',
     'email_address'                 => 'E-Mail Address',
     'email_address_help_text'       => 'This address is used for admin purposes, like activities notification',
-    'payment_settings'              => 'ตั้งค่าช่องทางการชำระเงิน',
+    'payment_settings'              => 'ตั้งค่าการชำระเงิน',
     'general_settings'              => 'การตั้งค่าทั่วไป',
     'enable_paypal'                 => 'Enable Paypal payment',
     'enable_stripe'                 => 'Enable Stripe payment',

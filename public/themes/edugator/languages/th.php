@@ -347,7 +347,7 @@ return [
     'settings'                    => 'ตั้งค่า',
     'general_settings'                    => 'การตั้งค่าทั่วไป',
     'lms_settings'                    => 'ตั้งค่า LMS',
-    'payment_settings'                    => 'ตั้งค่าช่องทางการชำระเงิน',
+    'payment_settings'                    => 'ตั้งค่าการชำระเงิน',
     'payment_gateways'                    => 'ช่องทางการชำระเงิน',
     'theme_settings'                    => 'การตั้งค่าธีม',
     'social_login_settings'                    => 'การเข้าใช้ด้วยโซเชียลมีเดีย',

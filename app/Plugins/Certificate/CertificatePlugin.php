@@ -33,7 +33,7 @@ class CertificatePlugin extends PluginBase {
             if ($isCourseComplete){
                 $certURL = route('download_certificate', $course->id);
 
-                echo "<div class='mb-4 text-center'> <a href='{$certURL}' class='btn btn-success'> <i class='la la-certificate'></i> Download Certificate</a> </div>";
+                echo "<div class='mb-4 text-center'> <a href='{$certURL}' class='btn btn-success'> <i class='la la-certificate'></i> พิมพ์ใบรับรอง</a> </div>";
             }
 
         }
@@ -44,7 +44,7 @@ class CertificatePlugin extends PluginBase {
     public function add_admin_menu_certificate(){
         $settingsURL = route('certificate_settings');
 
-        echo "<li> <a href='{$settingsURL}'><i class='la la-certificate'></i> Certificate Settings</a>  </li>";
+        echo "<li> <a href='{$settingsURL}'><i class='la la-certificate'></i> ตั้งค่าใบรับรอง</a>  </li>";
     }
 
 

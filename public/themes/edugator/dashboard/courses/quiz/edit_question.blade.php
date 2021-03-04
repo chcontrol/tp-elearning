@@ -45,7 +45,7 @@
                                     <div class="question-score">
                                         <div class="form-group">
                                             <label>Score</label>
-                                            <input type="number" name="score" class="form-control"
+                                            <input type="number" name="score" class="form-control" min="1"
                                                 value="{{ $question->score }}">
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
                                     <div class="question-score">
                                         <div class="form-group">
                                             <label>Score</label>
-                                            <input type="number" name="score" class="form-control"
+                                            <input type="number" name="score" class="form-control" min="1"
                                                 value="{{ $question->score }}">
                                         </div>
                                     </div>
@@ -224,13 +224,13 @@
 
 <script>
     function checkAnswerSelected() {
-        if ($("#AnswerSelected").val() == 0) {
-            alert("กรุณาเลือกข้อที่ถูก")
-            event.preventDefault()
-        } else {
-            $("#edit-question-form").submit();
-            location.reload();
-        }
+        // if ($("#AnswerSelected").val() == 0) {
+        //     alert("กรุณาเลือกข้อที่ถูก")
+        //     event.preventDefault()
+        // } else {
+        //     $("#edit-question-form").submit();
+        //     location.reload();
+        // }
     }
 
 

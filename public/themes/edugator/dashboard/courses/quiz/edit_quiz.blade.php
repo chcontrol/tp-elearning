@@ -173,7 +173,7 @@
                 <div class="question-score">
                     <div class="form-group">
                         <label>Score</label>
-                        <input value='1' type="number" name="score" class="form-control" placeholder="Score">
+                        <input value='1' type="number" name="score" class="form-control" placeholder="Score" min="1" >
                     </div>
                 </div>
             </div>
@@ -231,7 +231,7 @@
                 <div class="question-title">
                     <div class="form-group">
                         <label>Question Title</label>
-                        <input value='1' type="text" name="question_title" class="form-control"
+                        <input value='' type="text" name="question_title" class="form-control"
                             placeholder="write quetion title">
                     </div>
                 </div>
@@ -245,7 +245,7 @@
                 <div class="question-score">
                     <div class="form-group">
                         <label>Score</label>
-                        <input type="number" name="score" class="form-control" placeholder="Score">
+                        <input type="number" name="score" class="form-control" placeholder="Score" value="1" min="1">
                     </div>
                 </div>
             </div>
@@ -324,14 +324,14 @@
     }
 
     function checkAnswerCreateSelected() {
-        if ($("#AnswerSelectedCreate").val() == 0) {
-            alert("กรุณาเลือกข้อที่ถูก")
-            event.preventDefault()
-        } else {
-            $("#edit-question-form").submit();
-            location.reload();
+        // if ($("#AnswerSelectedCreate").val() == 0) {
+        //     alert("กรุณาเลือกข้อที่ถูก")
+        //     event.preventDefault()
+        // } else {
+        //     $("#edit-question-form").submit();
+        //     location.reload();
 
-        }
+        // }
     }
 
 </script>
